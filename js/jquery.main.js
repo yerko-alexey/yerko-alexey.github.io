@@ -77,7 +77,7 @@ function swapContent(address){
                 }
             }
             else {
-                $('#dots-canvas').show();
+                $('#dots-canvas').css('opacity', '1');
             }
             listener();
 
