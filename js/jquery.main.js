@@ -69,7 +69,7 @@ function swapContent(address){
             menu.children('a[href="' + address + '"]').addClass('active');
 
             if ( address != 'index.html' ) {
-                $('#dots-canvas').hide();
+                $('#dots-canvas').css('opacity', '0');
                 if( address == 'about.html' ){
                     navigation();
                     expand();
