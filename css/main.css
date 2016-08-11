@@ -60,10 +60,17 @@ svg {
       #wrapper #header .menu .icon-list {
         width: 280px; }
         #wrapper #header .menu .icon-list a {
+          outline: none;
           display: block;
-          padding: 0.8em; }
-          #wrapper #header .menu .icon-list a i {
-            opacity: 0.5; }
+          padding: 0.8em;
+          font-size: 1.2em;
+          color: #006962; }
+          #wrapper #header .menu .icon-list a:hover {
+            text-decoration: none; }
+            #wrapper #header .menu .icon-list a:hover i {
+              color: #ffae1a; }
+          #wrapper #header .menu .icon-list a.active i {
+            color: #ffae1a; }
           #wrapper #header .menu .icon-list a span {
             margin-left: 10px;
             text-transform: uppercase;

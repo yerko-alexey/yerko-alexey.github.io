@@ -82,17 +82,28 @@ svg {
 		-webkit-transition: -webkit-transform 0.3s;
 		transition: transform 0.3s;
 		.menu {
-			background: #373a47;
+			background: rgba(55, 58, 71, 1);
 			width: calc(100% - 120px);
 			height: 100%;
 			padding: 2em 1em;
 			.icon-list {
 				width: 280px;
 				a {
+					outline: none;
 					display: block;
 					padding: 0.8em;
-					i {
-						opacity: 0.5;
+					font-size: 1.2em;
+					color: #006962;
+					&:hover{
+						text-decoration: none;
+						i{
+							color: rgb(255, 174, 26);
+						}
+					}
+					&.active{
+						i{
+							color: rgb(255, 174, 26);
+						}
 					}
 					span {
 						margin-left: 10px;

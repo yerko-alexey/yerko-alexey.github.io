@@ -33,11 +33,12 @@ function historyAPI() {
     listener();
     window.onpopstate = function() {
         var location = document.location.pathname;
+        var address;
         if( location == '/' ){
-            var address = 'index.html'
+            address = 'index.html'
         }
         else{
-            var address = location.split("/").pop();
+            address = location.split("/").pop();
         }
         swapContent(address);
     };
@@ -60,7 +61,7 @@ function swapContent(address){
         dataType: "html",
         success: function(data){
 
-            var menu = $('.header__inner').children('li');
+            var menu = $('.icon-list');
 
             $('#main').html(data);
 
@@ -79,14 +80,12 @@ function swapContent(address){
                 $('#dots-canvas').show();
             }
             listener();
-            if( $('#header').hasClass('header--anim') ){
-                $('button.header__handle').click();
-            }
-            menu.removeClass("active");
-            menu.children('a[href="' + address + '"]').parent().addClass('active');
+
+            menu.children().removeClass("active");
+            menu.children('a[href="' + address + '"]').addClass('active');
         },
         error: function(){
-            alert("������! �������� ����������");
+            alert("Ошибка! Не удалось загрузить содержимое страницы");
         }
     });
 }
