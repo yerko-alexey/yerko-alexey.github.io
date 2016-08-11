@@ -76,7 +76,7 @@ function swapContent(address){
                 }
                 if( address == 'brandmaster.html' || address == 'cuda.html' || address == 'admin.html' ){
                     devices();
-                    menu.children('a[href="portfolio.html"]').parent().addClass('active');
+                    menu.children('a[href="portfolio.html"]').addClass('active');
                 }
             }
             else {
