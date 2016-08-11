@@ -65,6 +65,9 @@ function swapContent(address){
 
             $('#main').html(data);
 
+            menu.children().removeClass("active");
+            menu.children('a[href="' + address + '"]').addClass('active');
+
             if ( address != 'index.html' ) {
                 $('#dots-canvas').hide();
                 if( address == 'about.html' ){
@@ -80,9 +83,6 @@ function swapContent(address){
                 $('#dots-canvas').css('opacity', '1');
             }
             listener();
-
-            menu.children().removeClass("active");
-            menu.children('a[href="' + address + '"]').addClass('active');
         },
         error: function(){
             alert("Ошибка! Не удалось загрузить содержимое страницы");
