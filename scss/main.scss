@@ -42,6 +42,30 @@ input[type="radio"]:focus {
   outline: none;
 }
 
+.p-btn{
+	display: inline-block;
+	height: 35px;
+	vertical-align: middle;
+	span{
+		display: inline-block;
+		padding: 10px;
+		line-height: 35px;
+		vertical-align: middle;
+		&:first-child{
+			background: rgb(0, 181, 170);
+		}
+		&:nth-child(2){
+			height: 55px;
+			background: rgb(255, 181, 170);
+		}
+		&:last-child{
+			height: 55px;
+			background: rgb(0, 255, 170);
+		}
+	}
+
+
+}
 
 svg {
 	pointer-events: none; }
@@ -536,33 +560,4 @@ svg {
 
 .more {
 	display: none;
-}
-
-@media only screen and (max-width: 768px) {
-	#wrapper{
-		.large-header{
-			.main-title{
-				h1 {
-					font-size: 3em;
-				}
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 63em) {
-	.header{
-		@include transform(translate3d(-170px, 0, 0));
-		&.header--open{
-			+ #main {
-				opacity: 0.05;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 40em) {
-	.menu__items {
-		@include transform(scale3d(0.8, 0.8, 1));
-	}
 }

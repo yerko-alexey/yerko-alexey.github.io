@@ -21,6 +21,24 @@ input[type="radio"]:active,
 input[type="radio"]:focus {
   outline: none; }
 
+.p-btn {
+  display: inline-block;
+  height: 35px;
+  vertical-align: middle; }
+  .p-btn span {
+    display: inline-block;
+    padding: 10px;
+    line-height: 35px;
+    vertical-align: middle; }
+    .p-btn span:first-child {
+      background: #00b5aa; }
+    .p-btn span:nth-child(2) {
+      height: 55px;
+      background: #ffb5aa; }
+    .p-btn span:last-child {
+      height: 55px;
+      background: #00ffaa; }
+
 svg {
   pointer-events: none; }
 
@@ -426,22 +444,4 @@ svg {
 
 .more {
   display: none; }
-
-@media only screen and (max-width: 768px) {
-  #wrapper .large-header .main-title h1 {
-    font-size: 3em; } }
-
-@media screen and (max-width: 63em) {
-  .header {
-    -webkit-transform: translate3d(-170px, 0, 0);
-    -ms-transform: translate3d(-170px, 0, 0);
-    transform: translate3d(-170px, 0, 0); }
-    .header.header--open + #main {
-      opacity: 0.05; } }
-
-@media screen and (max-width: 40em) {
-  .menu__items {
-    -webkit-transform: scale3d(0.8, 0.8, 1);
-    -ms-transform: scale3d(0.8, 0.8, 1);
-    transform: scale3d(0.8, 0.8, 1); } }
 /*# sourceMappingURL=main.css.map */

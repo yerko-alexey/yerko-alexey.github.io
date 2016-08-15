@@ -27,9 +27,13 @@ function expand(){
     });
 }
 
+
+
+
 //History API//
 function historyAPI() {
     if (!supports_history_api()) { return; }
+    menuButtons();
     listener();
     window.onpopstate = function() {
         var location = document.location.pathname;
@@ -46,48 +50,63 @@ function historyAPI() {
 function supports_history_api() {
     return !!(window.history && history.pushState);
 }
-function listener(){
-    $('.historyAPI').on('click', function(e){
+function menuButtons(){
+    $('a.historyAPIMenu').on('click', function(e){
         var address = $(this).attr('href');
+        e.preventDefault();
         swapContent(address);
         history.pushState(null, null, address);
+    });
+}
+function listener(){
+    $('a.historyAPI').on('click', function(e){
+        var address = $(this).attr('href');
+        swapContent(address);
         e.preventDefault();
+        history.pushState(null, null, address);
     });
 }
 function swapContent(address){
-    $.ajax({
-        method: "GET",
-        url: 'https://yerko-alexey.github.io/content/'+ address,
-        dataType: "html",
-        success: function(data){
+    var main = $('#main');
+    main.animate({'opacity':'0'},500);
+    setTimeout( function(){
+        $.ajax({
+            method: "GET",
+            url: 'https://yerko-alexey.github.io/content/'+ address,
+            dataType: "html",
+            success: function(data){
 
-            var menu = $('.icon-list');
+                var menu = $('.icon-list');
 
-            $('#main').html(data);
 
-            menu.children().removeClass("active");
-            menu.children('a[href="' + address + '"]').addClass('active');
+                main.html(data);
+                main.animate({'opacity':'1'},500);
 
-            if ( address != 'index.html' ) {
-                $('#dots-canvas').css('opacity', '0');
-                if( address == 'about.html' ){
-                    navigation();
-                    expand();
+                menu.children().removeClass("active");
+                menu.children('a[href="' + address + '"]').addClass('active');
+
+                if ( address != 'index.html' ) {
+                    $('#dots-canvas').css('opacity', '0');
+                    if( address == 'about.html' ){
+                        navigation();
+                        expand();
+                    }
+                    if( address == 'brandmaster.html' || address == 'cuda.html' || address == 'admin.html' ){
+                        devices();
+                        menu.children('a[href="portfolio.html"]').addClass('active');
+                    }
                 }
-                if( address == 'brandmaster.html' || address == 'cuda.html' || address == 'admin.html' ){
-                    devices();
-                    menu.children('a[href="portfolio.html"]').addClass('active');
+                else {
+                    $('#dots-canvas').css('opacity', '1');
                 }
+                listener();
+            },
+            error: function(){
+                alert("Ошибка! Не удалось загрузить содержимое страницы");
             }
-            else {
-                $('#dots-canvas').css('opacity', '1');
-            }
-            listener();
-        },
-        error: function(){
-            alert("Ошибка! Не удалось загрузить содержимое страницы");
-        }
-    });
+        });
+    }, 1000);
+
 }
 //-History API//
 
