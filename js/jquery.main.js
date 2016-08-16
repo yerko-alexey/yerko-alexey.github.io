@@ -27,9 +27,6 @@ function expand(){
     });
 }
 
-
-
-
 //History API//
 function historyAPI() {
     if (!supports_history_api()) { return; }
@@ -68,44 +65,76 @@ function listener(){
 }
 function swapContent(address){
     var main = $('#main');
-    main.animate({'opacity':'0'},500);
     setTimeout( function(){
         $.ajax({
             method: "GET",
             url: 'https://yerko-alexey.github.io/content/'+ address,
             dataType: "html",
             success: function(data){
-
                 var menu = $('.icon-list');
+                var wrap = $('#wrapper');
+                var loader = $('.preloader');
+                var menuBtn = $('.menu-button');
 
-
-                main.html(data);
-                main.animate({'opacity':'1'},500);
-
-                menu.children().removeClass("active");
-                menu.children('a[href="' + address + '"]').addClass('active');
-
-                if ( address != 'index.html' ) {
-                    $('#dots-canvas').css('opacity', '0');
-                    if( address == 'about.html' ){
-                        navigation();
-                        expand();
+                wrap.animate(
+                    {option: 100},
+                    {duration: 1000,
+                        start: function(){
+                            menuBtn.hide();
+                        },
+                        step: function(now){
+                            loader.show(1000);
+                            var x = (now/100-1)*(-1);
+                            $(this).css({transform: 'scale(' + x + ')'});
+                        },
+                        complete: function(){
+                            main.html(data);
+                            menu.children().removeClass("active");
+                            menu.children('a[href="' + address + '"]').addClass('active');
+                            setTimeout(function(){
+                                wrap.animate({
+                                        option: 0
+                                    },
+                                    {
+                                        duration: 1000,
+                                        step: function(now){
+                                            console.log(now);
+                                            loader.hide(1000);
+                                            var x = (now/100-1)*(-1);
+                                            $(this).css({transform: 'scale(' + x + ')'});
+                                            if (now <= 50 && now >= 45){
+                                                if ( address != 'index.html' ) {
+                                                    $('#dots-canvas').css('opacity', '0');
+                                                    if( address == 'about.html' ){
+                                                        navigation();
+                                                        expand();
+                                                    }
+                                                    if( address == 'brandmaster.html' || address == 'cuda.html' || address == 'admin.html' ){
+                                                        devices();
+                                                        menu.children('a[href="portfolio.html"]').addClass('active');
+                                                    }
+                                                }
+                                                else {
+                                                    $('#dots-canvas').css('opacity', '1');
+                                                }
+                                                listener();
+                                            }
+                                        },
+                                        complete: function(){
+                                            menuBtn.show('slow');
+                                        }
+                                    }
+                                );
+                            }, 2000);
+                        }
                     }
-                    if( address == 'brandmaster.html' || address == 'cuda.html' || address == 'admin.html' ){
-                        devices();
-                        menu.children('a[href="portfolio.html"]').addClass('active');
-                    }
-                }
-                else {
-                    $('#dots-canvas').css('opacity', '1');
-                }
-                listener();
+                );
             },
             error: function(){
                 alert("Ошибка! Не удалось загрузить содержимое страницы");
             }
         });
-    }, 1000);
+    }, 250);
 
 }
 //-History API//
