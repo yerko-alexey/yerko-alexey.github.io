@@ -9,6 +9,7 @@ $(document).ready( function(){
     historyAPI();
     menu();
     if ( document.getElementById('draw') ) {
+        $('.drawings').show();
         devices();
     }
     classHelper(window);
