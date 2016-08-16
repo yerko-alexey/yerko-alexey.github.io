@@ -89,6 +89,7 @@ function swapContent(address){
                         },
                         complete: function(){
                             main.html(data);
+                            $('#dots-canvas').css('opacity', '0');
                             menu.children().removeClass("active");
                             menu.children('a[href="' + address + '"]').addClass('active');
                             setTimeout(function(){
@@ -104,7 +105,6 @@ function swapContent(address){
                                             $(this).css({transform: 'scale(' + x + ')'});
                                             if (now <= 50 && now >= 45){
                                                 if ( address != 'index.html' ) {
-                                                    $('#dots-canvas').css('opacity', '0');
                                                     if( address == 'about.html' ){
                                                         navigation();
                                                         expand();
