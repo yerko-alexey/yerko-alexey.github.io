@@ -355,7 +355,6 @@ svg {
 					padding: 0;
 					margin: 0;
 					list-style-type: none;
-					z-index: 1900;
 					text-align: center;
 					li {
 						width: 60%;
@@ -365,7 +364,6 @@ svg {
 						line-height: 48px;
 						font-size: 2em;
 						position: absolute;
-						z-index: 1800;
 						@include transform-origin(50% 50%);
 						@include transform(scale3d(0.5, 0.5, 1));
 						@include transition(transform 0.25s ease-out);

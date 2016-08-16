@@ -308,7 +308,6 @@ svg {
           padding: 0;
           margin: 0;
           list-style-type: none;
-          z-index: 1900;
           text-align: center; }
           #wrapper #main #about .navigation .navigation__items li {
             width: 60%;
@@ -318,7 +317,6 @@ svg {
             line-height: 48px;
             font-size: 2em;
             position: absolute;
-            z-index: 1800;
             -webkit-transform-origin: 50% 50%;
             -ms-transform-origin: 50% 50%;
             transform-origin: 50% 50%;
