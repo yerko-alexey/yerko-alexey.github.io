@@ -113,6 +113,7 @@ function swapContent(address){
                                                     expand();
                                                 }
                                                 if( address == 'brandmaster.html' || address == 'cuda.html' || address == 'admin.html' ){
+                                                    $('.drawings').show();
                                                     devices();
                                                     menu.children('a[href="portfolio.html"]').addClass('active');
                                                 }

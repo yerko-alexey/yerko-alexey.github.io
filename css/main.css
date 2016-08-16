@@ -489,6 +489,7 @@ svg {
         margin-top: 8em; }
       #wrapper #main .examples .drawings {
         position: relative;
+        display: none;
         max-height: 600px; }
       #wrapper #main .examples .illustration {
         position: absolute;
