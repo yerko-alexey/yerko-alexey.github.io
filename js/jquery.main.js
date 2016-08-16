@@ -105,24 +105,22 @@ function swapContent(address){
                                             loader.hide(1000);
                                             var x = (now/100-1)*(-1);
                                             $(this).css({transform: 'scale(' + x + ')'});
-                                            setTimeout(function(){
-                                                if ( address != 'index.html' ) {
-                                                    if( address == 'about.html' ){
-                                                        navigation();
-                                                        expand();
-                                                    }
-                                                    if( address == 'brandmaster.html' || address == 'cuda.html' || address == 'admin.html' ){
-                                                        devices();
-                                                        menu.children('a[href="portfolio.html"]').addClass('active');
-                                                    }
-                                                }
-                                                else {
-                                                    $('#dots-canvas').css('opacity', '1');
-                                                }
-                                                listener();
-                                            }, 500);
                                         },
                                         complete: function(){
+                                            if ( address != 'index.html' ) {
+                                                if( address == 'about.html' ){
+                                                    navigation();
+                                                    expand();
+                                                }
+                                                if( address == 'brandmaster.html' || address == 'cuda.html' || address == 'admin.html' ){
+                                                    devices();
+                                                    menu.children('a[href="portfolio.html"]').addClass('active');
+                                                }
+                                            }
+                                            else {
+                                                $('#dots-canvas').css('opacity', '1');
+                                            }
+                                            listener();
                                             menuBtn.show('slow');
                                         }
                                     }
