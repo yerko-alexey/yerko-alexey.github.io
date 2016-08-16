@@ -53,7 +53,7 @@ input[type="radio"]:focus {
 	position: relative;
 	outline: none;
 	border: none;
-	z-index: 9999;
+	z-index: 1000;
 	@include box-shadow(0 0 10px 0 rgba(0, 105, 98, .5));
 	&:before{
 		content: '';
