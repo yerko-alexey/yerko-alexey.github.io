@@ -105,7 +105,7 @@ function swapContent(address){
                                             loader.hide(1000);
                                             var x = (now/100-1)*(-1);
                                             $(this).css({transform: 'scale(' + x + ')'});
-                                            if (now <= 50 && now >= 45){
+                                            setTimeout(function(){
                                                 if ( address != 'index.html' ) {
                                                     if( address == 'about.html' ){
                                                         navigation();
@@ -120,7 +120,7 @@ function swapContent(address){
                                                     $('#dots-canvas').css('opacity', '1');
                                                 }
                                                 listener();
-                                            }
+                                            }, 500);
                                         },
                                         complete: function(){
                                             menuBtn.show('slow');
