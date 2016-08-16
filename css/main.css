@@ -27,12 +27,13 @@ input[type="radio"]:focus {
   margin: 10px;
   padding: 10px 30px;
   display: inline-block;
-  background: transparent;
+  background: #eee;
   color: #006962;
   font-size: 1.2em;
   position: relative;
   outline: none;
   border: none;
+  z-index: 9999;
   -ms-box-shadow: 0 0 10px 0 rgba(0, 105, 98, 0.5);
   -o-box-shadow: 0 0 10px 0 rgba(0, 105, 98, 0.5);
   box-shadow: 0 0 10px 0 rgba(0, 105, 98, 0.5); }
