@@ -20,9 +20,11 @@ function expand(){
         var target = $(this).prev();
         if(target.is(':visible')){
             target.hide('slow');
+            $(this).html('More')
         }
         else{
             target.show('slow');
+            $(this).html('Less');
         }
     });
 }
