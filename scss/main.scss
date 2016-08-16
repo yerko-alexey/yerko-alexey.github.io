@@ -247,6 +247,8 @@ svg {
 	}
 	.menu-button {
 		position: fixed;
+		top: 0;
+		left: 0;
 		z-index: 1000;
 		margin: 1em;
 		padding: 0;
@@ -479,6 +481,7 @@ svg {
 					position: relative;
 					margin: 0 auto;
 					text-decoration: none;
+					outline: none;
 					svg {
 						position: absolute;
 						top: 0;

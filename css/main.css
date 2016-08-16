@@ -204,6 +204,8 @@ svg {
             transform: rotate(-45deg); }
   #wrapper .menu-button {
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1000;
     margin: 1em;
     padding: 0;
@@ -400,7 +402,8 @@ svg {
         height: 200px;
         position: relative;
         margin: 0 auto;
-        text-decoration: none; }
+        text-decoration: none;
+        outline: none; }
         #wrapper #main .portfolioInner .innerImage > a svg {
           position: absolute;
           top: 0;
