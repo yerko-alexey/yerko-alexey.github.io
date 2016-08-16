@@ -108,6 +108,7 @@ function swapContent(address){
                                             $(this).css({transform: 'scale(' + x + ')'});
                                         },
                                         complete: function(){
+                                            $(this).removeAttr('style');
                                             if ( address != 'index.html' ) {
                                                 if( address == 'about.html' ){
                                                     navigation();
