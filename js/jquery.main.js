@@ -33,7 +33,7 @@ function expand(){
 //History API//
 function historyAPI() {
     if (!supports_history_api()) { return; }
-    menuButtons();
+    menuListener();
     listener();
     window.onpopstate = function() {
         var location = document.location.pathname;
@@ -50,20 +50,36 @@ function historyAPI() {
 function supports_history_api() {
     return !!(window.history && history.pushState);
 }
-function menuButtons(){
+function menuListener(){
+    var busy = false;
     $('a.historyAPIMenu').on('click', function(e){
-        var address = $(this).attr('href');
         e.preventDefault();
+        if (busy){
+            return;
+        }
+        busy = true;
+        var address = $(this).attr('href');
         swapContent(address);
         history.pushState(null, null, address);
+        setTimeout(function(){
+            busy = false;
+        },2000);
     });
 }
 function listener(){
+    var busy = false;
     $('a.historyAPI').on('click', function(e){
+        e.preventDefault();
+        if (busy){
+            return;
+        }
+        busy = true;
         var address = $(this).attr('href');
         swapContent(address);
-        e.preventDefault();
         history.pushState(null, null, address);
+        setTimeout(function(){
+            busy = false;
+        },2000);
     });
 }
 function swapContent(address){
@@ -102,7 +118,6 @@ function swapContent(address){
                                     {
                                         duration: 1000,
                                         step: function(now){
-                                            console.log(now);
                                             loader.hide(1000);
                                             var x = (now/100-1)*(-1);
                                             $(this).css({transform: 'scale(' + x + ')'});
