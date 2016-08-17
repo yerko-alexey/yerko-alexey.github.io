@@ -149,7 +149,7 @@ function swapContent(address){
                 );
             },
             error: function(){
-                alert("Ошибка! Не удалось загрузить содержимое страницы");
+                alert("Error! Page not found");
             }
         });
     }, 250);
