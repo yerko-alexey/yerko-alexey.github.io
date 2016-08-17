@@ -53,7 +53,7 @@ function supports_history_api() {
 }
 function menuListener(){
     var busy = false;
-    $('a.historyAPIMenu').on('click', function(e){
+    $('body').on('click', 'a.historyAPIMenu', function(e){
         e.preventDefault();
         if (busy){
             return;
@@ -62,7 +62,6 @@ function menuListener(){
         var address = $(this).attr('href');
         swapContent(address);
         history.pushState(null, null, address);
-        listener();
         setTimeout(function(){
             busy = false;
         },2000);
@@ -70,7 +69,7 @@ function menuListener(){
 }
 function listener(){
     var busy = false;
-    $('a.historyAPI').on('click', function(e){
+    $('body').on('click', 'a.historyAPI', function(e){
         e.preventDefault();
         if (busy){
             return;
@@ -79,7 +78,6 @@ function listener(){
         var address = $(this).attr('href');
         swapContent(address);
         history.pushState(null, null, address);
-        listener();
         setTimeout(function(){
             busy = false;
         },2000);
