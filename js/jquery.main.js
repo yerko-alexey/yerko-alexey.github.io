@@ -35,18 +35,17 @@ function historyAPI() {
     if (!supports_history_api()) { return; }
     menuListener();
     listener();
-    window.onpopstate = function() {
-        setTimeout(function(){
-            var location = document.location.pathname;
-            var address;
-            if( location == '/' ){
-                address = 'index.html'
-            }
-            else{
-                address = location.split("/").pop();
-            }
-            swapContent(address);
-        },100);
+    window.onpopstate = function(e) {
+        var location = document.location.pathname;
+        var address;
+        console.log(e.state);
+        if( location == '/' ){
+            address = 'index.html'
+        }
+        else{
+            address = location.split("/").pop();
+        }
+        swapContent(address);
     };
 }
 function supports_history_api() {
@@ -63,6 +62,7 @@ function menuListener(){
         var address = $(this).attr('href');
         swapContent(address);
         history.pushState(null, null, address);
+        listener();
         setTimeout(function(){
             busy = false;
         },2000);
@@ -79,6 +79,7 @@ function listener(){
         var address = $(this).attr('href');
         swapContent(address);
         history.pushState(null, null, address);
+        listener();
         setTimeout(function(){
             busy = false;
         },2000);
@@ -140,7 +141,6 @@ function swapContent(address){
                                             else {
                                                 $('#dots-canvas').css('display', 'block');
                                             }
-                                            listener();
                                             menuBtn.show('slow');
                                         }
                                     }
