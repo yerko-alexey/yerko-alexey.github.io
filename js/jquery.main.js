@@ -138,6 +138,7 @@ function swapContent(address){
                                             else {
                                                 $('#dots-canvas').css('display', 'block');
                                             }
+                                            listener();
                                             menuBtn.show('slow');
                                         }
                                     }
@@ -146,7 +147,6 @@ function swapContent(address){
                         }
                     }
                 );
-                listener();
             },
             error: function(){
                 alert("Ошибка! Не удалось загрузить содержимое страницы");
