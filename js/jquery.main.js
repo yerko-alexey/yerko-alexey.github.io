@@ -1,7 +1,7 @@
 $(document).ready( function(){
     dots();
     if(location.pathname === '/index.html' || location.pathname === '/'){
-        $('#dots-canvas').css('opacity', '1');
+        $('#dots-canvas').css('display', 'block');
     }
     if ( document.getElementById('navigation') ) {
         navigation();
@@ -108,7 +108,7 @@ function swapContent(address){
                         },
                         complete: function(){
                             main.html(data);
-                            $('#dots-canvas').css('opacity', '0');
+                            $('#dots-canvas').css('display', 'none');
                             menu.children().removeClass("active");
                             menu.children('a[href="' + address + '"]').addClass('active');
                             setTimeout(function(){

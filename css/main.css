@@ -230,6 +230,7 @@ svg {
       #wrapper .menu-button:before:hover {
         opacity: 0.6; }
   #wrapper #dots-canvas {
+    display: none;
     position: absolute;
     left: 0;
     right: 0;
