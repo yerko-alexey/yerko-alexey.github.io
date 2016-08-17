@@ -36,15 +36,17 @@ function historyAPI() {
     menuListener();
     listener();
     window.onpopstate = function() {
-        var location = document.location.pathname;
-        var address;
-        if( location == '/' ){
-            address = 'index.html'
-        }
-        else{
-            address = location.split("/").pop();
-        }
-        swapContent(address);
+        setTimeout(function(){
+            var location = document.location.pathname;
+            var address;
+            if( location == '/' ){
+                address = 'index.html'
+            }
+            else{
+                address = location.split("/").pop();
+            }
+            swapContent(address);
+        },100);
     };
 }
 function supports_history_api() {
