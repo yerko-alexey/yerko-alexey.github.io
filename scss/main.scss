@@ -42,7 +42,8 @@ input[type="radio"]:focus {
   outline: none;
 }
 .p-btn{
-	width: auto;
+	min-width: 150px;
+	text-align: center;
 	height: auto;
 	margin: 10px;
 	padding: 10px 30px;
@@ -55,17 +56,7 @@ input[type="radio"]:focus {
 	border: none;
 	z-index: 1000;
 	@include box-shadow(0 0 10px 0 rgba(0, 105, 98, .5));
-	&:before{
-		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		border-top: 2px solid #006962;
-		border-left: 2px solid #006962;
-	}
+	&:before,
 	&:after{
 		content: '';
 		display: block;
@@ -74,6 +65,14 @@ input[type="radio"]:focus {
 		right: 0;
 		bottom: 0;
 		left: 0;
+		transition: all 0.5s ease-in-out;
+		pointer-events: none;
+	}
+	&:before{
+		border-top: 2px solid #006962;
+		border-left: 2px solid #006962;
+	}
+	&:after{
 		border-bottom: 2px solid #006962;
 		border-right: 2px solid #006962;
 	}
@@ -85,11 +84,15 @@ input[type="radio"]:focus {
 	}
 	&:hover{
 		color: #00b5aa;
+		&:before,
+		&:after{
+			opacity: 0;
+		}
 		&:before{
-			animation: hoverEffectLeft 0.5s cubic-bezier(.55,.3,.24,.99) forwards;
+			transform: translateY(-100px);
 		}
 		&:after{
-			animation: hoverEffectRight 0.5s cubic-bezier(.55,.3,.24,.99) forwards;
+			transform: translateY(100px);
 		}
 	}
 
@@ -708,23 +711,5 @@ svg {
 		margin-left: -8px;
 
 		border-radius: 10px;
-	}
-}
-@keyframes hoverEffectLeft {
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-		transform: translateX(-200px);
-	}
-}
-@keyframes hoverEffectRight {
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-		transform: translateX(200px);
 	}
 }

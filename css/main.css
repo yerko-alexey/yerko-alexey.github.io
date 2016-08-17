@@ -22,7 +22,8 @@ input[type="radio"]:focus {
   outline: none; }
 
 .p-btn {
-  width: auto;
+  min-width: 150px;
+  text-align: center;
   height: auto;
   margin: 10px;
   padding: 10px 30px;
@@ -37,7 +38,7 @@ input[type="radio"]:focus {
   -ms-box-shadow: 0 0 10px 0 rgba(0, 105, 98, 0.5);
   -o-box-shadow: 0 0 10px 0 rgba(0, 105, 98, 0.5);
   box-shadow: 0 0 10px 0 rgba(0, 105, 98, 0.5); }
-  .p-btn:before {
+  .p-btn:before, .p-btn:after {
     content: '';
     display: block;
     position: absolute;
@@ -45,16 +46,13 @@ input[type="radio"]:focus {
     right: 0;
     bottom: 0;
     left: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+    pointer-events: none; }
+  .p-btn:before {
     border-top: 2px solid #006962;
     border-left: 2px solid #006962; }
   .p-btn:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     border-bottom: 2px solid #006962;
     border-right: 2px solid #006962; }
   .p-btn:hover, .p-btn:focus, .p-btn:active {
@@ -62,12 +60,16 @@ input[type="radio"]:focus {
     text-decoration: none; }
   .p-btn:hover {
     color: #00b5aa; }
+    .p-btn:hover:before, .p-btn:hover:after {
+      opacity: 0; }
     .p-btn:hover:before {
-      -webkit-animation: hoverEffectLeft 0.5s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
-              animation: hoverEffectLeft 0.5s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards; }
+      -webkit-transform: translateY(-100px);
+          -ms-transform: translateY(-100px);
+              transform: translateY(-100px); }
     .p-btn:hover:after {
-      -webkit-animation: hoverEffectRight 0.5s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
-              animation: hoverEffectRight 0.5s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards; }
+      -webkit-transform: translateY(100px);
+          -ms-transform: translateY(100px);
+              transform: translateY(100px); }
 
 svg {
   pointer-events: none; }
@@ -631,36 +633,4 @@ svg {
     margin-top: -37px;
     margin-left: -8px;
     border-radius: 10px; } }
-
-@-webkit-keyframes hoverEffectLeft {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0;
-    -webkit-transform: translateX(-200px);
-            transform: translateX(-200px); } }
-
-@keyframes hoverEffectLeft {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0;
-    -webkit-transform: translateX(-200px);
-            transform: translateX(-200px); } }
-
-@-webkit-keyframes hoverEffectRight {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0;
-    -webkit-transform: translateX(200px);
-            transform: translateX(200px); } }
-
-@keyframes hoverEffectRight {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0;
-    -webkit-transform: translateX(200px);
-            transform: translateX(200px); } }
 /*# sourceMappingURL=main.css.map */
