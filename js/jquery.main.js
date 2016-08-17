@@ -146,6 +146,7 @@ function swapContent(address){
                         }
                     }
                 );
+                listener();
             },
             error: function(){
                 alert("Ошибка! Не удалось загрузить содержимое страницы");
