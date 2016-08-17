@@ -136,7 +136,7 @@ function swapContent(address){
                                                 }
                                             }
                                             else {
-                                                $('#dots-canvas').css('opacity', '1');
+                                                $('#dots-canvas').css('display', 'block');
                                             }
                                             listener();
                                             menuBtn.show('slow');
