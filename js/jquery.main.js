@@ -35,19 +35,16 @@ function historyAPI() {
     if (!supports_history_api()) { return; }
     menuListener();
     listener();
-    window.onpopstate = function(e) {
-        setTimeout(function(){
-            var location = document.location.pathname;
-            var address;
-            console.log(e.state);
-            if( location == '/' ){
-                address = 'index.html'
-            }
-            else{
-                address = location.split("/").pop();
-            }
-            swapContent(address);
-        },100);
+    window.onpopstate = function() {
+        var location = document.location.pathname;
+        var address;
+        if( location == '/' ){
+            address = 'index.html';
+        }
+        else{
+            address = location.split("/").pop();
+        }
+        swapContent(address);
     };
 }
 function supports_history_api() {
