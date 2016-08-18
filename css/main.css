@@ -211,13 +211,24 @@ svg {
         letter-spacing: 0.1em;
         color: #006962;
         text-transform: uppercase;
-        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8); }
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        -webkit-transform: translateY(-100px);
+            -ms-transform: translateY(-100px);
+                transform: translateY(-100px);
+        -webkit-animation: fade-in-bottom 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
+                animation: fade-in-bottom 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards; }
       #wrapper #main .main-title p {
+        -webkit-animation: fade-in 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
+                animation: fade-in 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
         font-size: 2em;
         letter-spacing: 0.1em;
         color: #777777;
         text-transform: uppercase;
         text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8); }
+      #wrapper #main .main-title a {
+        -webkit-animation: fade-in-top 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
+                animation: fade-in-top 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards; }
       #wrapper #main .main-title .thin {
         font-weight: 200; }
     #wrapper #main ul {
@@ -225,8 +236,25 @@ svg {
       padding: 0; }
     #wrapper #main #about {
       padding: 50px 15px; }
-      #wrapper #main #about img {
-        z-index: 100; }
+      #wrapper #main #about .about-img {
+        text-align: right; }
+        #wrapper #main #about .about-img img {
+          z-index: 100;
+          -webkit-animation: fade-in 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
+                  animation: fade-in 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
+          -webkit-transform: scale(0);
+              -ms-transform: scale(0);
+                  transform: scale(0); }
+        #wrapper #main #about .about-img nav {
+          -webkit-animation: fade-in 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 1s forwards;
+                  animation: fade-in 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 1s forwards;
+          -webkit-transform: scale(0);
+              -ms-transform: scale(0);
+                  transform: scale(0); }
+      #wrapper #main #about .about-text {
+        text-align: justify;
+        -webkit-animation: fade-in-right 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
+                animation: fade-in-right 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards; }
       #wrapper #main #about .navigation {
         position: absolute;
         display: inline-block;
@@ -336,6 +364,36 @@ svg {
       #wrapper #main #skills .skillsInner {
         padding-top: 50px;
         padding-bottom: 50px; }
+        #wrapper #main #skills .skillsInner p {
+          -webkit-transform: scale(0);
+              -ms-transform: scale(0);
+                  transform: scale(0); }
+        #wrapper #main #skills .skillsInner:nth-child(odd) p {
+          -webkit-animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.4s forwards;
+                  animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.4s forwards; }
+        #wrapper #main #skills .skillsInner:nth-child(even) p {
+          -webkit-animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.8s forwards;
+                  animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.8s forwards; }
+      #wrapper #main #skills h2 {
+        -webkit-animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
+                animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards; }
+      #wrapper #main #skills .first,
+      #wrapper #main #skills .second,
+      #wrapper #main #skills .third {
+        -webkit-transform: translateY(9999px);
+            -ms-transform: translateY(9999px);
+                transform: translateY(9999px);
+        -webkit-animation: fade-in-top 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
+                animation: fade-in-top 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards; }
+      #wrapper #main #skills .first {
+        -webkit-animation-delay: 1s;
+                animation-delay: 1s; }
+      #wrapper #main #skills .second {
+        -webkit-animation-delay: 1.2s;
+                animation-delay: 1.2s; }
+      #wrapper #main #skills .third {
+        -webkit-animation-delay: 1.4s;
+                animation-delay: 1.4s; }
     #wrapper #main .portfolioInner {
       text-align: center;
       padding: 10% 0; }
@@ -343,82 +401,118 @@ svg {
         text-align: left; }
       #wrapper #main .portfolioInner:nth-child(odd) .innerText {
         text-align: right; }
-      #wrapper #main .portfolioInner .innerText a {
-        outline: none; }
-        #wrapper #main .portfolioInner .innerText a:hover {
-          text-decoration: none; }
-      #wrapper #main .portfolioInner .innerText h1 a {
-        color: #00b5aa; }
-      #wrapper #main .portfolioInner .innerText h3 {
-        color: #777777; }
-      #wrapper #main .portfolioInner .innerImage > a {
-        display: block;
-        width: 200px;
-        height: 200px;
-        position: relative;
-        margin: 0 auto;
-        text-decoration: none;
-        outline: none; }
-        #wrapper #main .portfolioInner .innerImage > a svg {
-          position: absolute;
-          top: 0;
-          left: 0;
-          -ms-box-shadow: 0 0 15px 0 #323232;
-          -o-box-shadow: 0 0 15px 0 #323232;
-          box-shadow: 0 0 15px 0 #323232;
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg); }
-          #wrapper #main .portfolioInner .innerImage > a svg line {
-            stroke-width: 4;
-            stroke: #00827a;
-            fill: none;
-            stroke-dasharray: 200;
-            -webkit-transition: -webkit-transform 0.6s ease-out;
-            transition: transform 0.6s ease-out; }
-        #wrapper #main .portfolioInner .innerImage > a:hover svg line {
-          -webkit-transform: translateX(-400px);
-          -ms-transform: translateX(-400px);
-          transform: translateX(-400px); }
-          #wrapper #main .portfolioInner .innerImage > a:hover svg line.top {
+      #wrapper #main .portfolioInner .innerText {
+        height: 200px; }
+        #wrapper #main .portfolioInner .innerText a {
+          outline: none; }
+          #wrapper #main .portfolioInner .innerText a:hover {
+            text-decoration: none; }
+        #wrapper #main .portfolioInner .innerText h1 {
+          -webkit-transform: translateX(-9999px);
+              -ms-transform: translateX(-9999px);
+                  transform: translateX(-9999px);
+          line-height: 50px;
+          margin: 50px 0 0 0; }
+          #wrapper #main .portfolioInner .innerText h1 a {
+            color: #00b5aa; }
+        #wrapper #main .portfolioInner .innerText h3 {
+          -webkit-transform: translateX(-9999px);
+              -ms-transform: translateX(-9999px);
+                  transform: translateX(-9999px);
+          line-height: 50px;
+          margin: 0 0 50px 0;
+          color: #777777; }
+        #wrapper #main .portfolioInner .innerText:nth-child(odd) h1 {
+          -webkit-animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.2s forwards;
+                  animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.2s forwards; }
+        #wrapper #main .portfolioInner .innerText:nth-child(odd) h3 {
+          -webkit-animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.4s forwards;
+                  animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.4s forwards; }
+        #wrapper #main .portfolioInner .innerText:nth-child(even) h1 {
+          -webkit-animation: fade-in-right 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.2s forwards;
+                  animation: fade-in-right 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.2s forwards; }
+        #wrapper #main .portfolioInner .innerText:nth-child(even) h3 {
+          -webkit-animation: fade-in-right 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.4s forwards;
+                  animation: fade-in-right 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.4s forwards; }
+      #wrapper #main .portfolioInner .innerImage {
+        opacity: 0;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%); }
+        #wrapper #main .portfolioInner .innerImage > a {
+          display: block;
+          width: 200px;
+          height: 200px;
+          position: relative;
+          margin: 0 auto;
+          text-decoration: none;
+          outline: none; }
+          #wrapper #main .portfolioInner .innerImage > a svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            -ms-box-shadow: 0 0 15px 0 #323232;
+            -o-box-shadow: 0 0 15px 0 #323232;
+            box-shadow: 0 0 15px 0 #323232;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }
+            #wrapper #main .portfolioInner .innerImage > a svg line {
+              stroke-width: 4;
+              stroke: #00827a;
+              fill: none;
+              stroke-dasharray: 200;
+              -webkit-transition: -webkit-transform 0.6s ease-out;
+              transition: transform 0.6s ease-out; }
+          #wrapper #main .portfolioInner .innerImage > a:hover svg line {
             -webkit-transform: translateX(-400px);
             -ms-transform: translateX(-400px);
             transform: translateX(-400px); }
-          #wrapper #main .portfolioInner .innerImage > a:hover svg line.bottom {
-            -webkit-transform: translateX(400px);
-            -ms-transform: translateX(400px);
-            transform: translateX(400px); }
-          #wrapper #main .portfolioInner .innerImage > a:hover svg line.left {
-            -webkit-transform: translateY(400px);
-            -ms-transform: translateY(400px);
-            transform: translateY(400px); }
-          #wrapper #main .portfolioInner .innerImage > a:hover svg line.right {
-            -webkit-transform: translateY(-400px);
-            -ms-transform: translateY(-400px);
-            transform: translateY(-400px); }
-        #wrapper #main .portfolioInner .innerImage > a:hover img {
-          -webkit-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-          transform: scale(1.1); }
-        #wrapper #main .portfolioInner .innerImage > a img {
-          position: absolute;
-          margin: auto;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          -webkit-transition: all 1s ease;
-          transition: all 1s ease; }
-      #wrapper #main .portfolioInner .innerImage.cuda > a svg {
-        background: #87509c; }
-        #wrapper #main .portfolioInner .innerImage.cuda > a svg line {
-          stroke: #00b5aa; }
-      #wrapper #main .portfolioInner .innerImage.brandmaster img {
-        width: 120px;
-        height: auto; }
-      #wrapper #main .portfolioInner .innerImage.adminPanel img {
-        width: 100px;
-        height: 100px; }
+            #wrapper #main .portfolioInner .innerImage > a:hover svg line.top {
+              -webkit-transform: translateX(-400px);
+              -ms-transform: translateX(-400px);
+              transform: translateX(-400px); }
+            #wrapper #main .portfolioInner .innerImage > a:hover svg line.bottom {
+              -webkit-transform: translateX(400px);
+              -ms-transform: translateX(400px);
+              transform: translateX(400px); }
+            #wrapper #main .portfolioInner .innerImage > a:hover svg line.left {
+              -webkit-transform: translateY(400px);
+              -ms-transform: translateY(400px);
+              transform: translateY(400px); }
+            #wrapper #main .portfolioInner .innerImage > a:hover svg line.right {
+              -webkit-transform: translateY(-400px);
+              -ms-transform: translateY(-400px);
+              transform: translateY(-400px); }
+          #wrapper #main .portfolioInner .innerImage > a:hover img {
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            transform: scale(1.1); }
+          #wrapper #main .portfolioInner .innerImage > a img {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            -webkit-transition: all 1s ease;
+            transition: all 1s ease; }
+        #wrapper #main .portfolioInner .innerImage.cuda > a svg {
+          background: #87509c; }
+          #wrapper #main .portfolioInner .innerImage.cuda > a svg line {
+            stroke: #00b5aa; }
+        #wrapper #main .portfolioInner .innerImage.brandmaster img {
+          width: 120px;
+          height: auto; }
+        #wrapper #main .portfolioInner .innerImage.adminPanel img {
+          width: 100px;
+          height: 100px; }
+        #wrapper #main .portfolioInner .innerImage:nth-child(odd) {
+          -webkit-animation: portfolioImagesLeft 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.5s forwards;
+                  animation: portfolioImagesLeft 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.5s forwards; }
+        #wrapper #main .portfolioInner .innerImage:nth-child(even) {
+          -webkit-animation: portfolioImagesRight 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
+                  animation: portfolioImagesRight 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards; }
     #wrapper #main .container:first-child {
       min-height: 200px; }
     #wrapper #main .works {
@@ -489,7 +583,9 @@ svg {
 .fade-in-left h2,
 .fade-in-left h3,
 .fade-in-left p {
-  opacity: 0; }
+  -webkit-transform: translateX(-9999px);
+      -ms-transform: translateX(-9999px);
+          transform: translateX(-9999px); }
 
 .fade-in-left h1 {
   -webkit-animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.2s forwards;
@@ -507,25 +603,87 @@ svg {
   -webkit-animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.8s forwards;
           animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.8s forwards; }
 
+@-webkit-keyframes fade-in {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes fade-in {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
 @-webkit-keyframes fade-in-left {
   from {
-    opacity: 0;
     -webkit-transform: translateX(-9999px);
             transform: translateX(-9999px); }
   to {
-    opacity: 1;
     -webkit-transform: translateX(0px);
             transform: translateX(0px); } }
 
 @keyframes fade-in-left {
   from {
-    opacity: 0;
     -webkit-transform: translateX(-9999px);
             transform: translateX(-9999px); }
   to {
-    opacity: 1;
     -webkit-transform: translateX(0px);
             transform: translateX(0px); } }
+
+@-webkit-keyframes fade-in-right {
+  from {
+    -webkit-transform: translateX(9999px);
+            transform: translateX(9999px); }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); } }
+
+@keyframes fade-in-right {
+  from {
+    -webkit-transform: translateX(9999px);
+            transform: translateX(9999px); }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); } }
+
+@-webkit-keyframes fade-in-top {
+  from {
+    -webkit-transform: translateY(9999px);
+            transform: translateY(9999px); }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }
+
+@keyframes fade-in-top {
+  from {
+    -webkit-transform: translateY(9999px);
+            transform: translateY(9999px); }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }
+
+@-webkit-keyframes fade-in-bottom {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }
+
+@keyframes fade-in-bottom {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }
 
 @-webkit-keyframes show {
   from {
@@ -538,4 +696,40 @@ svg {
     margin-top: -300px; }
   to {
     margin-top: 0; } }
+
+@-webkit-keyframes portfolioImagesLeft {
+  from {
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@keyframes portfolioImagesLeft {
+  from {
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@-webkit-keyframes portfolioImagesRight {
+  from {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@keyframes portfolioImagesRight {
+  from {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
 /*# sourceMappingURL=main.css.map */
