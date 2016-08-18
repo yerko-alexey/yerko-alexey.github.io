@@ -601,6 +601,12 @@ svg {
 	display: none;
 }
 .fade-in-left{
+	h1,
+	h2,
+	h3,
+	p{
+		opacity: 0;
+	}
 	h1{
 		animation: fade-in-left 1s cubic-bezier(.55,.3,.24,.99) 0.2s forwards;
 	}

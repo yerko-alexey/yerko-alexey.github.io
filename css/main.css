@@ -485,6 +485,12 @@ svg {
 .more {
   display: none; }
 
+.fade-in-left h1,
+.fade-in-left h2,
+.fade-in-left h3,
+.fade-in-left p {
+  opacity: 0; }
+
 .fade-in-left h1 {
   -webkit-animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.2s forwards;
           animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) 0.2s forwards; }
