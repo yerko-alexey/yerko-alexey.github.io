@@ -91,67 +91,34 @@ function swapContent(address){
             dataType: "html",
             success: function(data){
                 var menu = $('.icon-list');
-                var wrap = $('#wrapper');
-                var loader = $('.preloader');
-                var menuBtn = $('.menu-button');
+                var dots = $('#dots-canvas');
 
-                wrap.animate(
-                    {option: 100},
-                    {duration: 1000,
-                        start: function(){
-                            menuBtn.hide();
-                        },
-                        step: function(now){
-                            loader.show(1000);
-                            var x = (now/100-1)*(-1);
-                            $(this).css({transform: 'scale(' + x + ')'});
-                        },
-                        complete: function(){
-                            main.html(data);
-                            $('#dots-canvas').css('display', 'none');
-                            menu.children().removeClass("active");
-                            menu.children('a[href="' + address + '"]').addClass('active');
-                            setTimeout(function(){
-                                wrap.animate({
-                                        option: 0
-                                    },
-                                    {
-                                        duration: 1000,
-                                        step: function(now){
-                                            loader.hide(1000);
-                                            var x = (now/100-1)*(-1);
-                                            $(this).css({transform: 'scale(' + x + ')'});
-                                        },
-                                        complete: function(){
-                                            $(this).removeAttr('style');
-                                            if ( address != 'index.html' ) {
-                                                if( address == 'about.html' ){
-                                                    navigation();
-                                                    expand();
-                                                }
-                                                if( address == 'brandmaster.html' || address == 'cuda.html' || address == 'admin.html' ){
-                                                    $('.drawings').show();
-                                                    devices();
-                                                    menu.children('a[href="portfolio.html"]').addClass('active');
-                                                }
-                                            }
-                                            else {
-                                                $('#dots-canvas').css('display', 'block');
-                                            }
-                                            menuBtn.show('slow');
-                                        }
-                                    }
-                                );
-                            }, 2000);
+                main.fadeOut(500, function(){
+                    $(this).html(data).fadeIn().scrollTop(0);
+                    dots.css('display', 'none');
+                    menu.children().removeClass("active");
+                    menu.children('a[href="' + address + '"]').addClass('active');
+                    if ( address != 'index.html' ) {
+                        if( address == 'about.html' ){
+                            navigation();
+                            expand();
+                        }
+                        if( address == 'brandmaster.html' || address == 'cuda.html' || address == 'admin.html' ){
+                            $('.drawings').show();
+                            devices();
+                            menu.children('a[href="portfolio.html"]').addClass('active');
                         }
                     }
-                );
+                    else {
+                        dots.css('display', 'block');
+                    }
+                });
             },
             error: function(){
                 alert("Error! Page not found");
             }
         });
-    }, 250);
+    }, 1);
 
 }
 //-History API//
