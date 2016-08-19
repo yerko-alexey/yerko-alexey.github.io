@@ -531,7 +531,7 @@ svg {
 		.works {
 			height: 200px;
 			text-align: center;
-
+			position: relative;
 			&:before{
 				content: '';
 				position: absolute;
@@ -539,7 +539,7 @@ svg {
 				width: 0;
 				height: 0;
 				border-bottom: 200px solid transparent;
-				border-right: 585px solid #639791;
+				border-right: 585px solid rgba(0, 105, 98, 0.7);
 				z-index: 1;
 			}
 			&:after{
@@ -549,7 +549,7 @@ svg {
 				width: 0;
 				height: 0;
 				border-bottom: 200px solid transparent;
-				border-left: 585px solid #639791;
+				border-left: 585px solid rgba(0, 105, 98, 0.7);
 				z-index: 1;
 			}
 			img {
