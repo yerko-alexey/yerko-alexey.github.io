@@ -431,14 +431,34 @@ svg {
     #wrapper #main .container:first-child {
       min-height: 200px; }
     #wrapper #main .works {
-      background: -webkit-linear-gradient(bottom, #00b5aa, #006962);
-      background: linear-gradient(to top, #00b5aa, #006962);
-      text-align: center;
-      border-bottom-left-radius: 200px;
-      border-bottom-right-radius: 200px; }
+      height: 200px;
+      text-align: center; }
+      #wrapper #main .works:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 200px solid transparent;
+        border-right: 585px solid #639791;
+        z-index: 1; }
+      #wrapper #main .works:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 200px solid transparent;
+        border-left: 585px solid #639791;
+        z-index: 1; }
       #wrapper #main .works img {
+        position: absolute;
+        display: inline-block;
+        left: calc(50% - 100px);
         width: 100px;
-        margin: 10px; }
+        height: 100px;
+        margin: 50px;
+        z-index: 200; }
     #wrapper #main .examples {
       padding-top: 50px; }
       #wrapper #main .examples .iphone {
