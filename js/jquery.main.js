@@ -18,15 +18,13 @@ $(document).ready( function(){
 
 function expand(){
     $('.expand').on('click', function(){
-        var target = $(this).prev();
-        if(target.is(':visible')){
-            target.hide('slow');
-            $(this).html('More')
-        }
-        else{
-            target.show('slow');
-            $(this).html('Less');
-        }
+        var button = $(this);
+        var target = button.prev();
+        target.slideToggle('slow', function () {
+            button.text(function () {
+                return target.is(":visible") ? "Less" : "More";
+            });
+        });
     });
 }
 

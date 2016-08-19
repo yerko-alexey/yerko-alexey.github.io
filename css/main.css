@@ -227,6 +227,8 @@ svg {
       padding: 50px 15px; }
       #wrapper #main #about img {
         z-index: 100; }
+      #wrapper #main #about .row div:first-child {
+        margin-bottom: 60px; }
       #wrapper #main #about .navigation {
         position: absolute;
         display: inline-block;

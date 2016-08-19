@@ -280,6 +280,13 @@ svg {
 			img {
 				z-index: 100;
 			}
+			.row{
+				div{
+					&:first-child{
+						margin-bottom: 60px;
+					}
+				}
+			}
 			.navigation {
 				position: absolute;
 				display: inline-block;
