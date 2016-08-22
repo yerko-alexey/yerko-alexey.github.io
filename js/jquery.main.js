@@ -38,8 +38,8 @@ function feedback(){
         var errorContainer = form.find('.form-error');
         var modal = $('#feedbackModal');
 
-        form.find('.req').each(function(){ // пройдем по каждому полю с классом .req в форме
-            $(this).removeClass('error'); // сначала уберем у него класс с ошибкой, на случай если он там есть
+        form.find('.req').each(function(){
+            $(this).removeClass('error');
             $(this).on('focus', function(){
                 $(this).removeClass('error');
                 if( form.find('.req').hasClass('error') ){
@@ -50,62 +50,41 @@ function feedback(){
                 }
             });
 
-            if ($(this).val() == '') { // если оно пустое
-                $(this).addClass('error'); // добавим к нему класс с ошибкой
+            if ($(this).val() == '') {
+                $(this).addClass('error');
                 errorContainer.css('opacity','1');
-                errors = true; // найдена ошибка
+                errors = true;
             }
         });
-        if (errors) return false; // если есть ошибка то больше ничего не делаем
+        if (errors) return false;
 
-        var data = form.serialize(); // сериализуем данные формы в строку для отправки, обратите внимание что атрибуты name у полей полностью сопдают с нэймами у полей самой гугл формы
+        var data = form.serialize();
 
-        $.ajax({ // инициализируем аякс
-            url: 'https://docs.google.com/forms/d/e/1FAIpQLSdcb-ibUHXfdf8-zJ6yvlRUi1gkOmQ07ZDQdBPnkA637JORTw/formResponse', // слать надо сюда, строку с буковками надо заменить на вашу, это атрибут action формы
-            data: data, // данные  которые мы сериализовали
-            type: "POST", // постом
-            dataType: "xml", // ответ ждем в формате xml
-            beforeSend: function(){ // перед отправкой
-                form.find('button').attr('disabled'); // отключим кнопку
+        $.ajax({
+            url: 'https://docs.google.com/forms/d/e/1FAIpQLSdcb-ibUHXfdf8-zJ6yvlRUi1gkOmQ07ZDQdBPnkA637JORTw/formResponse',
+            data: data,
+            type: "POST",
+            dataType: "xml",
+            beforeSend: function(){
+                form.find('button').attr('disabled');
             },
-            statusCode: { // после того как пришел ответ от сервера
-                0: function (){ // это успешный случай
+            statusCode: {
+                0: function (){
                     $('#wrapper').addClass('show-feedback');
                     modal.on('click', '.close', function(){
                         $('#wrapper').removeAttr('class');
                     });
-                    alert( 'Ошибка ' + this.status );
                 },
-                200: function (){ // это тоже успешный случай
+                200: function (){
                     $('#wrapper').addClass('show-feedback');
                     modal.on('click', '.close', function(){
                         $('#wrapper').removeAttr('class');
                     });
-                    alert( 'Ошибка ' + this.status );
                 }
             }
         });
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //-Feedback form//
 
 //History API//
