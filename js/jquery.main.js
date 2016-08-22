@@ -69,11 +69,19 @@ function feedback(){
                 form.find('button').attr('disabled'); // отключим кнопку
             },
             statusCode: { // после того как пришел ответ от сервера
+                0: function (){ // это успешный случай
+                    $('#wrapper').addClass('show-feedback');
+                    modal.on('click', '.close', function(){
+                        $('#wrapper').removeAttr('class');
+                    });
+                    alert( 'Ошибка ' + this.status );
+                },
                 200: function (){ // это тоже успешный случай
                     $('#wrapper').addClass('show-feedback');
                     modal.on('click', '.close', function(){
                         $('#wrapper').removeAttr('class');
                     });
+                    alert( 'Ошибка ' + this.status );
                 }
             }
         });
