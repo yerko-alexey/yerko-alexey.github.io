@@ -1051,17 +1051,17 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  perspective: 500px; }
 
 body {
   font-family: "Raleway", Calibri, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.25;
   color: #383a3c;
-  background-color: #eee;
-  -webkit-perspective: 500px;
-  -moz-perspective: 500px;
-  perspective: 500px; }
+  background-color: #eee; }
 
 body:before {
   content: "";
