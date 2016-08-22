@@ -126,7 +126,6 @@ svg {
   pointer-events: none; }
 
 #wrapper {
-  min-height: 100vh;
   overflow: hidden; }
   #wrapper.show-menu #header {
     -webkit-transform: translate3d(0, 0, 0);
