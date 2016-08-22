@@ -1061,8 +1061,7 @@ body {
   background-color: #eee;
   -webkit-perspective: 500px;
   -moz-perspective: 500px;
-  perspective: 500px;
-  overflow: hidden; }
+  perspective: 500px; }
 
 body:before {
   content: "";

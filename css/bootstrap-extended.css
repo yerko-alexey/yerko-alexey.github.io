@@ -1057,8 +1057,7 @@ body {
   color: #383a3c;
   background-color: #eee;
   -webkit-perspective: 500px;
-  perspective: 500px;
-  overflow: hidden; }
+  perspective: 500px; }
 
 body:before {
   content: "";
