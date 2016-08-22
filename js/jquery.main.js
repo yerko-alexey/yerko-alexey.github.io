@@ -179,6 +179,9 @@ function swapContent(address){
                             navigation();
                             expand();
                         }
+                        if( address == 'contacts.html' ){
+                            feedback();
+                        }
                         if( address == 'brandmaster.html' || address == 'cuda.html' || address == 'admin.html' ){
                             $('.drawings').show();
                             devices();
