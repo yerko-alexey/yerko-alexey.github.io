@@ -14,6 +14,7 @@ $(document).ready( function(){
     }
     classHelper(window);
     expand();
+    feedback();
 });
 
 function expand(){
@@ -27,6 +28,83 @@ function expand(){
         });
     });
 }
+
+//Feedback form//
+function feedback(){
+    $('#feedback').submit( function(e){
+        e.preventDefault();
+        var form = $(this);
+        var errors = false;
+        var errorContainer = form.find('.form-error');
+        var modal = $('#feedbackModal');
+
+        form.find('.req').each(function(){ // пройдем по каждому полю с классом .req в форме
+            $(this).removeClass('error'); // сначала уберем у него класс с ошибкой, на случай если он там есть
+            $(this).on('focus', function(){
+                $(this).removeClass('error');
+                if( form.find('.req').hasClass('error') ){
+                    errorContainer.css('opacity','1');
+                }
+                else{
+                    errorContainer.css('opacity','0');
+                }
+            });
+
+            if ($(this).val() == '') { // если оно пустое
+                $(this).addClass('error'); // добавим к нему класс с ошибкой
+                errorContainer.css('opacity','1');
+                errors = true; // найдена ошибка
+            }
+        });
+        if (errors) return false; // если есть ошибка то больше ничего не делаем
+
+        var data = form.serialize(); // сериализуем данные формы в строку для отправки, обратите внимание что атрибуты name у полей полностью сопдают с нэймами у полей самой гугл формы
+
+        $.ajax({ // инициализируем аякс
+            url: 'https://docs.google.com/forms/d/e/1FAIpQLSdcb-ibUHXfdf8-zJ6yvlRUi1gkOmQ07ZDQdBPnkA637JORTw/formResponse', // слать надо сюда, строку с буковками надо заменить на вашу, это атрибут action формы
+            data: data, // данные  которые мы сериализовали
+            type: "POST", // постом
+            dataType: "xml", // ответ ждем в формате xml
+            beforeSend: function(){ // перед отправкой
+                form.find('button').attr('disabled'); // отключим кнопку
+            },
+            statusCode: { // после того как пришел ответ от сервера
+                0: function (){ // это успешный случай
+                    $('#wrapper').addClass('show-feedback');
+                    modal.on('click', '.close', function(){
+                        $('#wrapper').removeAttr('class');
+                    });
+                },
+                200: function (){ // это тоже успешный случай
+                    $('#wrapper').addClass('show-feedback');
+                    modal.on('click', '.close', function(){
+                        $('#wrapper').removeAttr('class');
+                    });
+                }
+            }
+        });
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-Feedback form//
 
 //History API//
 function historyAPI() {

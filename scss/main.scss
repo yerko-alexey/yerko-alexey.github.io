@@ -31,7 +31,7 @@ $media-expressions: (
 @import url("font-awesome.min.css");
 
 body {
-  font-weight: 400;
+ 	 font-weight: 400;
 }
 
 a,
@@ -40,6 +40,67 @@ input[type="radio"],
 input[type="radio"]:active,
 input[type="radio"]:focus {
   outline: none;
+}
+#modals{
+	position: relative;
+	.modal-background{
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 2000;
+		display: none;
+		background: rgba(0, 105, 98, 0.5);
+
+	}
+	#feedbackModal{
+		position: fixed;
+		top: 20%;
+		height: auto;
+		z-index: 3000;
+		display: none;
+		p{
+			&:first-child{
+				width: 100%;
+				display: block;
+				padding: 15px;
+				background: rgb(0, 105, 98);
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+				color: #fff;
+				font-weight: 800;
+				text-transform: uppercase;
+				letter-spacing: 0.2em;
+				margin: 0;
+			}
+			&:nth-child(2){
+				width: 100%;
+				display: block;
+				padding: 25px;
+				background: #00b5aa;
+				margin: 0;
+				color: #fff;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+			}
+		}
+		button{
+			position: absolute;
+			right: 30px;
+			top: 13px;
+			color: #fff;
+			background: transparent;
+			border: 0;
+			font-size: 0;
+			&:before{
+				font-size: 20px;
+			}
+			&:hover, &:focus{
+				text-decoration: none;
+			}
+		}
+	}
 }
 .p-btn{
 	min-width: 150px;
@@ -114,6 +175,18 @@ svg {
 			-webkit-transform: translate3d(100px,0,0);
 			transform: translate3d(100px,0,0);
 		}
+	}
+	&.show-feedback{
+		transform-style: preserve-3d;
+		transform-origin: 50% 100%;
+		animation: open-modal-top 0.5s forwards ease-in;
+		#feedbackModal{
+			display: block;
+		}
+		.modal-background{
+			display: block;
+		}
+
 	}
 	#header {
 		position: fixed;
@@ -245,32 +318,6 @@ svg {
 		min-height: 100vh;
 		z-index: 1;
 		@include transition(transform 0.3s);
-		.main-title {
-			position: absolute;
-			margin: 0;
-			padding: 0;
-			text-align: center;
-			top: 50%;
-			left: 50%;
-			@include transform(translate3d(-50%, -50%, 0));
-			h1 {
-				font-size: 4.2em;
-				letter-spacing: 0.1em;
-				color: #006962;
-				text-transform: uppercase;
-				text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
-			}
-			p {
-				font-size: 2em;
-				letter-spacing: 0.1em;
-				color: #777777;
-				text-transform: uppercase;
-				text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
-			}
-			.thin {
-				font-weight: 200;
-			}
-		}
 		ul {
 			list-style-type: none;
 			padding: 0;
@@ -407,6 +454,90 @@ svg {
 			.skillsInner {
 				padding-top: 50px;
 				padding-bottom: 50px;
+			}
+		}
+		#contacts{
+			h1{
+				font-size: 3em;
+				letter-spacing: 0.5em;
+				text-transform: uppercase;
+				margin-top: 50px;
+				margin-bottom: 25px;
+				color: #006962;
+			}
+			p{
+				font-size: 1.5em;
+				letter-spacing: 0.1em;
+				color: #777777;
+				margin-bottom: 25px;
+			}
+			input{
+				border: 0;
+				display: block;
+				width: 100%;
+				margin-bottom: 25px;
+			}
+			input[type=text]{
+				&:first-child{
+					text-transform: capitalize;
+				}
+			}
+			input[type=text],
+			input[type=email]{
+				font-size: 1.5em;
+				letter-spacing: 0.1em;
+				color: #777777;
+				line-height: 2em;
+				background: transparent;
+				border: 0;
+				border-bottom: 2px solid #006962;
+				@include transition(border-bottom 1s ease-out);
+				&.error{
+					border-bottom-color: #ff0000;
+				}
+			}
+			input[type=submit]{
+				width: auto;
+				float: right;
+				margin: 25px 0;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.3em;
+			}
+			.form-error{
+				float: left;
+				opacity: 0;
+				font-size: 1.25em;
+				padding: 10px 30px;
+				margin: 25px 0;
+				color: #ff0000;
+				@include transition(all 1s ease-out);
+			}
+		}
+		.main-title {
+			position: absolute;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			top: 50%;
+			left: 50%;
+			@include transform(translate3d(-50%, -50%, 0));
+			h1 {
+				font-size: 4.2em;
+				letter-spacing: 0.1em;
+				color: #006962;
+				text-transform: uppercase;
+				text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+			}
+			p {
+				font-size: 2em;
+				letter-spacing: 0.1em;
+				color: #777777;
+				text-transform: uppercase;
+				text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+			}
+			.thin {
+				font-weight: 200;
 			}
 		}
 		.portfolioInner {
@@ -629,6 +760,7 @@ svg {
 				}
 			}
 		}
+
 	}
 }
 .more {
@@ -745,5 +877,11 @@ svg {
 	to{
 		opacity: 1;
 		transform: translateX(0);
+	}
+}
+@keyframes open-modal-top {
+	50% {
+		transform: rotateX(5deg);
+		animation-timing-function: ease-out;
 	}
 }

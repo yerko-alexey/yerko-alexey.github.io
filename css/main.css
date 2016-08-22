@@ -21,6 +21,57 @@ input[type="radio"]:active,
 input[type="radio"]:focus {
   outline: none; }
 
+#modals {
+  position: relative; }
+  #modals .modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+    background: rgba(0, 105, 98, 0.5); }
+  #modals #feedbackModal {
+    position: fixed;
+    top: 20%;
+    height: auto;
+    z-index: 3000;
+    display: none; }
+    #modals #feedbackModal p:first-child {
+      width: 100%;
+      display: block;
+      padding: 15px;
+      background: #006962;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: #fff;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin: 0; }
+    #modals #feedbackModal p:nth-child(2) {
+      width: 100%;
+      display: block;
+      padding: 25px;
+      background: #00b5aa;
+      margin: 0;
+      color: #fff;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px; }
+    #modals #feedbackModal button {
+      position: absolute;
+      right: 30px;
+      top: 13px;
+      color: #fff;
+      background: transparent;
+      border: 0;
+      font-size: 0; }
+      #modals #feedbackModal button:before {
+        font-size: 20px; }
+      #modals #feedbackModal button:hover, #modals #feedbackModal button:focus {
+        text-decoration: none; }
+
 .p-btn {
   min-width: 150px;
   text-align: center;
@@ -85,6 +136,18 @@ svg {
     transition-delay: 0.1s;
     -webkit-transform: translate3d(100px, 0, 0);
     transform: translate3d(100px, 0, 0); }
+  #wrapper.show-feedback {
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 100%;
+        -ms-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-animation: open-modal-top 0.5s forwards ease-in;
+            animation: open-modal-top 0.5s forwards ease-in; }
+    #wrapper.show-feedback #feedbackModal {
+      display: block; }
+    #wrapper.show-feedback .modal-background {
+      display: block; }
   #wrapper #header {
     position: fixed;
     z-index: 1001;
@@ -196,30 +259,6 @@ svg {
     z-index: 1;
     -webkit-transition: -webkit-transform 0.3s;
     transition: transform 0.3s; }
-    #wrapper #main .main-title {
-      position: absolute;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate3d(-50%, -50%, 0);
-      -ms-transform: translate3d(-50%, -50%, 0);
-      transform: translate3d(-50%, -50%, 0); }
-      #wrapper #main .main-title h1 {
-        font-size: 4.2em;
-        letter-spacing: 0.1em;
-        color: #006962;
-        text-transform: uppercase;
-        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8); }
-      #wrapper #main .main-title p {
-        font-size: 2em;
-        letter-spacing: 0.1em;
-        color: #777777;
-        text-transform: uppercase;
-        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8); }
-      #wrapper #main .main-title .thin {
-        font-weight: 200; }
     #wrapper #main ul {
       list-style-type: none;
       padding: 0; }
@@ -338,6 +377,79 @@ svg {
       #wrapper #main #skills .skillsInner {
         padding-top: 50px;
         padding-bottom: 50px; }
+    #wrapper #main #contacts h1 {
+      font-size: 3em;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      margin-top: 50px;
+      margin-bottom: 25px;
+      color: #006962; }
+    #wrapper #main #contacts p {
+      font-size: 1.5em;
+      letter-spacing: 0.1em;
+      color: #777777;
+      margin-bottom: 25px; }
+    #wrapper #main #contacts input {
+      border: 0;
+      display: block;
+      width: 100%;
+      margin-bottom: 25px; }
+    #wrapper #main #contacts input[type=text]:first-child {
+      text-transform: capitalize; }
+    #wrapper #main #contacts input[type=text],
+    #wrapper #main #contacts input[type=email] {
+      font-size: 1.5em;
+      letter-spacing: 0.1em;
+      color: #777777;
+      line-height: 2em;
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid #006962;
+      -webkit-transition: border-bottom 1s ease-out;
+      transition: border-bottom 1s ease-out; }
+      #wrapper #main #contacts input[type=text].error,
+      #wrapper #main #contacts input[type=email].error {
+        border-bottom-color: #ff0000; }
+    #wrapper #main #contacts input[type=submit] {
+      width: auto;
+      float: right;
+      margin: 25px 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3em; }
+    #wrapper #main #contacts .form-error {
+      float: left;
+      opacity: 0;
+      font-size: 1.25em;
+      padding: 10px 30px;
+      margin: 25px 0;
+      color: #ff0000;
+      -webkit-transition: all 1s ease-out;
+      transition: all 1s ease-out; }
+    #wrapper #main .main-title {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate3d(-50%, -50%, 0);
+      -ms-transform: translate3d(-50%, -50%, 0);
+      transform: translate3d(-50%, -50%, 0); }
+      #wrapper #main .main-title h1 {
+        font-size: 4.2em;
+        letter-spacing: 0.1em;
+        color: #006962;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8); }
+      #wrapper #main .main-title p {
+        font-size: 2em;
+        letter-spacing: 0.1em;
+        color: #777777;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8); }
+      #wrapper #main .main-title .thin {
+        font-weight: 200; }
     #wrapper #main .portfolioInner {
       text-align: center;
       padding: 10% 0; }
@@ -752,4 +864,18 @@ svg {
     opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
+
+@-webkit-keyframes open-modal-top {
+  50% {
+    -webkit-transform: rotateX(5deg);
+            transform: rotateX(5deg);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; } }
+
+@keyframes open-modal-top {
+  50% {
+    -webkit-transform: rotateX(5deg);
+            transform: rotateX(5deg);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; } }
 /*# sourceMappingURL=main.css.map */

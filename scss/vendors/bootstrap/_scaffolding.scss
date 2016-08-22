@@ -30,6 +30,10 @@ body {
   line-height: $line-height-base;
   color: $text-color;
   background-color: $body-bg;
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  perspective: 500px;
+  overflow: hidden;
 }
 body:before {
   content: "";
