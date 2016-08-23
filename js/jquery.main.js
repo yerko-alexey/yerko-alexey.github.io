@@ -60,29 +60,49 @@ function feedback(){
 
         var data = form.serialize();
 
-        $.ajax({
-            url: 'https://docs.google.com/forms/d/e/1FAIpQLSdcb-ibUHXfdf8-zJ6yvlRUi1gkOmQ07ZDQdBPnkA637JORTw/formResponse',
-            data: data,
-            type: "POST",
-            dataType: "json",
-            beforeSend: function(){
-                form.find('button').attr('disabled');
-            },
-            statusCode: {
-                0: function (){
-                    $('#wrapper').addClass('show-feedback');
-                    modal.on('click', '.close', function(){
-                        $('#wrapper').removeAttr('class');
-                    });
-                },
-                200: function (){
-                    $('#wrapper').addClass('show-feedback');
-                    modal.on('click', '.close', function(){
-                        $('#wrapper').removeAttr('class');
-                    });
-                }
-            }
-        });
+
+        var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+
+        var xhr = new XHR();
+
+
+        xhr.open('POST', 'https://docs.google.com/forms/d/e/1FAIpQLSdcb-ibUHXfdf8-zJ6yvlRUi1gkOmQ07ZDQdBPnkA637JORTw/formResponse', false);
+
+        xhr.onload = function() {
+            alert( this.responseText );
+        }
+
+        xhr.onerror = function() {
+            alert( 'Ошибка ' + this.status );
+        }
+
+        xhr.send(data);
+
+
+
+        //$.ajax({
+        //    url: 'https://docs.google.com/forms/d/e/1FAIpQLSdcb-ibUHXfdf8-zJ6yvlRUi1gkOmQ07ZDQdBPnkA637JORTw/formResponse',
+        //    data: data,
+        //    type: "POST",
+        //    dataType: "xml",
+        //    beforeSend: function(){
+        //        form.find('button').attr('disabled');
+        //    },
+        //    statusCode: {
+        //        0: function (){
+        //            $('#wrapper').addClass('show-feedback');
+        //            modal.on('click', '.close', function(){
+        //                $('#wrapper').removeAttr('class');
+        //            });
+        //        },
+        //        200: function (){
+        //            $('#wrapper').addClass('show-feedback');
+        //            modal.on('click', '.close', function(){
+        //                $('#wrapper').removeAttr('class');
+        //            });
+        //        }
+        //    }
+        //});
     });
 }
 //-Feedback form//
