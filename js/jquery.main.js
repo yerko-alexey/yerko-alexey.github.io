@@ -64,7 +64,7 @@ function feedback(){
             url: 'https://docs.google.com/forms/d/e/1FAIpQLSdcb-ibUHXfdf8-zJ6yvlRUi1gkOmQ07ZDQdBPnkA637JORTw/formResponse',
             data: data,
             type: "POST",
-            dataType: "xml",
+            dataType: "jsonp",
             beforeSend: function(){
                 form.find('button').attr('disabled');
             },
