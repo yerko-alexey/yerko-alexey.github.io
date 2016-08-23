@@ -1058,11 +1058,7 @@ body {
   font-size: 14px;
   line-height: 1.25;
   color: #383a3c;
-  background-color: #eee;
-  -webkit-perspective: 500px;
-  -moz-perspective: 500px;
-  perspective: 500px;
-  overflow: hidden; }
+  background-color: #eee; }
 
 body:before {
   content: "";

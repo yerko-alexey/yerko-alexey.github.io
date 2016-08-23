@@ -191,7 +191,7 @@ function dots() {
     initAnimation();
     addListeners();
     function initHeader() {
-        width = window.innerWidth;
+        width = window.innerWidth - 17;
         height = window.innerHeight;
         target = {x: width/2, y: height/2};
         largeHeader = document.getElementById('main');
@@ -270,7 +270,7 @@ function dots() {
         else animateHeader = true;
     }
     function resize() {
-        width = window.innerWidth - 17;
+        width = window.innerWidth;
         height = window.innerHeight;
         largeHeader.style.height = height+'px';
         canvas.width = width;

@@ -176,14 +176,20 @@ svg {
 		}
 	}
 	&.show-feedback{
-		transform-style: preserve-3d;
-		transform-origin: 50% 100%;
-		animation: open-modal-top 0.5s forwards ease-in;
+		-webkit-perspective: 500px;
+		-moz-perspective: 500px;
+		perspective: 500px;
 		#feedbackModal{
 			display: block;
 		}
 		.modal-background{
 			display: block;
+		}
+		#main,
+		.modal-background{
+			transform-style: preserve-3d;
+			transform-origin: 50% 100%;
+			animation: open-modal-top 0.5s forwards ease-in;
 		}
 
 	}
