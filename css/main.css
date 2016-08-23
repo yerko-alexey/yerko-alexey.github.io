@@ -315,6 +315,45 @@
       color: #ff0000;
       -webkit-transition: all 1s ease-out;
       transition: all 1s ease-out; }
+    #wrapper #main #contacts .location {
+      display: inline-block;
+      position: relative;
+      padding: 50px 0 0 0; }
+      #wrapper #main #contacts .location span {
+        width: 30px;
+        height: 30px;
+        border-radius: 50% 50% 50% 0;
+        background: #00b5aa;
+        position: absolute;
+        -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        left: 50%;
+        top: 30px;
+        margin: -20px 0 0 -20px; }
+        #wrapper #main #contacts .location span:after {
+          content: "";
+          width: 14px;
+          height: 14px;
+          margin: 8px 0 0 8px;
+          background: #e6e6e6;
+          position: absolute;
+          border-radius: 50%; }
+    #wrapper #main #contacts .social {
+      display: inline-block;
+      float: right;
+      padding: 50px 0 0 0; }
+      #wrapper #main #contacts .social li {
+        margin-left: -4px;
+        display: inline-block; }
+        #wrapper #main #contacts .social li:first-child {
+          margin-left: 0; }
+        #wrapper #main #contacts .social li a {
+          color: #00b5aa;
+          font-size: 2em; }
+          #wrapper #main #contacts .social li a:hover {
+            color: #006962;
+            text-decoration: none; }
     #wrapper #main .main-title {
       position: absolute;
       margin: 0;

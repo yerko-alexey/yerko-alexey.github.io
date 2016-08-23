@@ -30,6 +30,7 @@ $media-expressions: (
 
 @import url("font-awesome.min.css");
 
+//General//
 #wrapper {
 	overflow: hidden;
 	&.show-menu{
@@ -387,6 +388,52 @@ $media-expressions: (
 				color: #ff0000;
 				@include transition(all 1s ease-out);
 			}
+			.location{
+				display: inline-block;
+				position: relative;
+				padding: 50px 0 0 0;
+
+				span{
+					width: 30px;
+					height: 30px;
+					border-radius: 50% 50% 50% 0;
+					background: #00b5aa;
+					position: absolute;
+					transform: rotate(-45deg);
+					left: 50%;
+					top: 30px;
+					margin: -20px 0 0 -20px;
+					&:after{
+						content: "";
+						width: 14px;
+						height: 14px;
+						margin: 8px 0 0 8px;
+						background: #e6e6e6;
+						position: absolute;
+						border-radius: 50%;
+					}
+				}
+			}
+			.social{
+				display: inline-block;
+				float: right;
+				padding: 50px 0 0 0 ;
+				li{
+					margin-left: -4px;
+					display: inline-block;
+					&:first-child{
+						margin-left: 0;
+					}
+					a{
+						color: #00b5aa;
+						font-size: 2em;
+						&:hover{
+							color: #006962;
+							text-decoration: none;
+						}
+					}
+				}
+			}
 		}
 		.main-title {
 			position: absolute;
@@ -701,6 +748,7 @@ $media-expressions: (
 .more {
 	display: none;
 }
+//-General//
 
 //Animation classes//
 .fade-in{
@@ -732,7 +780,6 @@ $media-expressions: (
 	transform: translateX(9999px);
 	animation: fade-in-right 1s cubic-bezier(.55,.3,.24,.99) forwards;
 }
-
 .delay-1{animation-delay: 0.1s;}
 .delay-2{animation-delay: 0.2s;}
 .delay-3{animation-delay: 0.3s;}
@@ -748,7 +795,6 @@ $media-expressions: (
 .delay-13{animation-delay: 1.3s;}
 .delay-14{animation-delay: 1.4s;}
 .delay-15{animation-delay: 1.5s;}
-
 @keyframes fade-in {
 	from{
 		transform: scale(0);
@@ -823,5 +869,4 @@ $media-expressions: (
 		animation-timing-function: ease-out;
 	}
 }
-
 //-Animation classes//
