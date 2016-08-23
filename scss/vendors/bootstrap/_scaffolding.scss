@@ -30,6 +30,7 @@ body {
   line-height: $line-height-base;
   color: $text-color;
   background-color: $body-bg;
+  font-weight: 400;
 }
 body:before {
   content: "";
@@ -55,6 +56,13 @@ textarea {
 
 
 // Links
+a,
+button,
+input[type="radio"],
+input[type="radio"]:active,
+input[type="radio"]:focus {
+  outline: none;
+}
 
 a {
   color: $link-color;
@@ -173,4 +181,8 @@ hr {
 
 h1, h2, h3, h4, h5, h6{
   text-shadow: 6px 2px 2px rgba(150, 150, 150, .5);
+}
+
+svg {
+  pointer-events: none;
 }

@@ -1055,7 +1055,8 @@ body {
   font-size: 14px;
   line-height: 1.25;
   color: #383a3c;
-  background-color: #eee; }
+  background-color: #eee;
+  font-weight: 400; }
 
 body:before {
   content: "";
@@ -1074,6 +1075,13 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit; }
+
+a,
+button,
+input[type="radio"],
+input[type="radio"]:active,
+input[type="radio"]:focus {
+  outline: none; }
 
 a {
   color: #337ab7;
@@ -1144,6 +1152,9 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   text-shadow: 6px 2px 2px rgba(150, 150, 150, 0.5); }
+
+svg {
+  pointer-events: none; }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -3096,6 +3107,54 @@ input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%; }
+
+.p-btn {
+  min-width: 150px;
+  text-align: center;
+  height: auto;
+  margin: 10px;
+  padding: 10px 30px;
+  display: inline-block;
+  background: #eee;
+  color: #006962;
+  font-size: 1.25em;
+  position: relative;
+  outline: none;
+  border: none;
+  z-index: 1000;
+  box-shadow: 0 0 10px 0 rgba(0, 105, 98, 0.5); }
+  .p-btn:before, .p-btn:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+    pointer-events: none; }
+  .p-btn:before {
+    border-top: 2px solid #006962;
+    border-left: 2px solid #006962; }
+  .p-btn:after {
+    border-bottom: 2px solid #006962;
+    border-right: 2px solid #006962; }
+  .p-btn:hover, .p-btn:focus, .p-btn:active {
+    outline: none;
+    text-decoration: none; }
+  .p-btn:hover {
+    color: #00b5aa; }
+    .p-btn:hover:before, .p-btn:hover:after {
+      opacity: 0; }
+    .p-btn:hover:before {
+      -webkit-transform: translateY(-100px);
+          -ms-transform: translateY(-100px);
+              transform: translateY(-100px); }
+    .p-btn:hover:after {
+      -webkit-transform: translateY(100px);
+          -ms-transform: translateY(100px);
+              transform: translateY(100px); }
 
 .fade {
   opacity: 0;

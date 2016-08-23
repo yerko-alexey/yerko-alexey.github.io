@@ -166,3 +166,60 @@ input[type="button"] {
     width: 100%;
   }
 }
+
+.p-btn{
+  min-width: 150px;
+  text-align: center;
+  height: auto;
+  margin: 10px;
+  padding: 10px 30px;
+  display: inline-block;
+  background: #eee;
+  color: #006962;
+  font-size: 1.25em;
+  position: relative;
+  outline: none;
+  border: none;
+  z-index: 1000;
+  @include box-shadow(0 0 10px 0 rgba(0, 105, 98, .5));
+  &:before,
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+  }
+  &:before{
+    border-top: 2px solid #006962;
+    border-left: 2px solid #006962;
+  }
+  &:after{
+    border-bottom: 2px solid #006962;
+    border-right: 2px solid #006962;
+  }
+  &:hover,
+  &:focus,
+  &:active{
+    outline: none;
+    text-decoration: none;
+  }
+  &:hover{
+    color: #00b5aa;
+    &:before,
+    &:after{
+      opacity: 0;
+    }
+    &:before{
+      transform: translateY(-100px);
+    }
+    &:after{
+      transform: translateY(100px);
+    }
+  }
+
+}

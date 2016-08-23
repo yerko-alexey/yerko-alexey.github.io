@@ -30,137 +30,6 @@ $media-expressions: (
 
 @import url("font-awesome.min.css");
 
-body {
- 	 font-weight: 400;
-}
-
-a,
-button,
-input[type="radio"],
-input[type="radio"]:active,
-input[type="radio"]:focus {
-  outline: none;
-}
-#modals{
-	position: relative;
-	.modal-background{
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 2000;
-		display: none;
-		background: rgba(0, 105, 98, 0.5);
-
-	}
-	#feedbackModal{
-		position: fixed;
-		top: 20%;
-		height: auto;
-		z-index: 3000;
-		display: none;
-		p{
-			&:first-child{
-				width: 100%;
-				display: block;
-				padding: 15px;
-				background: rgb(0, 105, 98);
-				border-top-left-radius: 10px;
-				border-top-right-radius: 10px;
-				color: #fff;
-				font-weight: 800;
-				text-transform: uppercase;
-				letter-spacing: 0.2em;
-				margin: 0;
-			}
-			&:nth-child(2){
-				width: 100%;
-				display: block;
-				padding: 25px;
-				background: #00b5aa;
-				margin: 0;
-				color: #fff;
-				border-bottom-left-radius: 10px;
-				border-bottom-right-radius: 10px;
-			}
-		}
-		button{
-			position: absolute;
-			right: 30px;
-			top: 13px;
-			color: #fff;
-			background: transparent;
-			border: 0;
-			font-size: 0;
-			&:before{
-				font-size: 20px;
-			}
-			&:hover, &:focus{
-				text-decoration: none;
-			}
-		}
-	}
-}
-.p-btn{
-	min-width: 150px;
-	text-align: center;
-	height: auto;
-	margin: 10px;
-	padding: 10px 30px;
-	display: inline-block;
-	background: #eee;
-	color: #006962;
-	font-size: 1.25em;
-	position: relative;
-	outline: none;
-	border: none;
-	z-index: 1000;
-	@include box-shadow(0 0 10px 0 rgba(0, 105, 98, .5));
-	&:before,
-	&:after{
-		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		transition: all 0.5s ease-in-out;
-		pointer-events: none;
-	}
-	&:before{
-		border-top: 2px solid #006962;
-		border-left: 2px solid #006962;
-	}
-	&:after{
-		border-bottom: 2px solid #006962;
-		border-right: 2px solid #006962;
-	}
-	&:hover,
-	&:focus,
-	&:active{
-		outline: none;
-		text-decoration: none;
-	}
-	&:hover{
-		color: #00b5aa;
-		&:before,
-		&:after{
-			opacity: 0;
-		}
-		&:before{
-			transform: translateY(-100px);
-		}
-		&:after{
-			transform: translateY(100px);
-		}
-	}
-
-}
-svg {
-	pointer-events: none;
-}
 #wrapper {
 	overflow: hidden;
 	&.show-menu{
@@ -768,9 +637,72 @@ svg {
 
 	}
 }
+#modals{
+	position: relative;
+	.modal-background{
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 2000;
+		display: none;
+		background: rgba(0, 105, 98, 0.5);
+
+	}
+	#feedbackModal{
+		position: fixed;
+		top: 20%;
+		height: auto;
+		z-index: 3000;
+		display: none;
+		p{
+			&:first-child{
+				width: 100%;
+				display: block;
+				padding: 15px;
+				background: rgb(0, 105, 98);
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+				color: #fff;
+				font-weight: 800;
+				text-transform: uppercase;
+				letter-spacing: 0.2em;
+				margin: 0;
+			}
+			&:nth-child(2){
+				width: 100%;
+				display: block;
+				padding: 25px;
+				background: #00b5aa;
+				margin: 0;
+				color: #fff;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+			}
+		}
+		button{
+			position: absolute;
+			right: 30px;
+			top: 13px;
+			color: #fff;
+			background: transparent;
+			border: 0;
+			font-size: 0;
+			&:before{
+				font-size: 20px;
+			}
+			&:hover, &:focus{
+				text-decoration: none;
+			}
+		}
+	}
+}
 .more {
 	display: none;
 }
+
+//Animation classes//
 .fade-in{
 	opacity: 0;
 	animation: fade-in 1s cubic-bezier(.55,.3,.24,.99) forwards;
@@ -800,6 +732,7 @@ svg {
 	transform: translateX(9999px);
 	animation: fade-in-right 1s cubic-bezier(.55,.3,.24,.99) forwards;
 }
+
 .delay-1{animation-delay: 0.1s;}
 .delay-2{animation-delay: 0.2s;}
 .delay-3{animation-delay: 0.3s;}
@@ -890,3 +823,5 @@ svg {
 		animation-timing-function: ease-out;
 	}
 }
+
+//-Animation classes//
