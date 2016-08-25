@@ -778,8 +778,7 @@ $media-expressions: (
 }
 .fill-in-left{
 	width: 0;
-	opacity: 0;
-	animation: fill-in-left 1s linear forwards;
+	animation: fill-in-left 1s ease-in forwards;
 }
 .fade-in-right{
 	transform: translateX(9999px);
@@ -818,11 +817,7 @@ $media-expressions: (
 	}
 }
 @keyframes fill-in-left {
-	1%{
-		opacity: 1;
-	}
 	100%{
-		opacity: 1;
 		width: 100%;
 	}
 }

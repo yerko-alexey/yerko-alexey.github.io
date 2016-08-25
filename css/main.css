@@ -647,9 +647,8 @@
 
 .fill-in-left {
   width: 0;
-  opacity: 0;
-  -webkit-animation: fill-in-left 1s linear forwards;
-          animation: fill-in-left 1s linear forwards; }
+  -webkit-animation: fill-in-left 1s ease-in forwards;
+          animation: fill-in-left 1s ease-in forwards; }
 
 .fade-in-right {
   -webkit-transform: translateX(9999px);
@@ -753,17 +752,11 @@
             transform: translateX(0px); } }
 
 @-webkit-keyframes fill-in-left {
-  1% {
-    opacity: 1; }
   100% {
-    opacity: 1;
     width: 100%; } }
 
 @keyframes fill-in-left {
-  1% {
-    opacity: 1; }
   100% {
-    opacity: 1;
     width: 100%; } }
 
 @-webkit-keyframes fade-in-right {
