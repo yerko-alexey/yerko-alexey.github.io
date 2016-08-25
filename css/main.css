@@ -647,8 +647,8 @@
 
 .fill-in-left {
   width: 0;
-  -webkit-animation: fill-in-left 1s ease-in forwards;
-          animation: fill-in-left 1s ease-in forwards; }
+  -webkit-animation: fill-in-left 2s ease-in-out forwards;
+          animation: fill-in-left 2s ease-in-out forwards; }
 
 .fade-in-right {
   -webkit-transform: translateX(9999px);
