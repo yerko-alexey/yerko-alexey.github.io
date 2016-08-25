@@ -281,7 +281,7 @@
     #wrapper #main #contacts input {
       border: 0;
       display: block;
-      width: 100%;
+      width: 0;
       margin-bottom: 25px; }
     #wrapper #main #contacts input[type=text]:first-child {
       text-transform: capitalize; }
