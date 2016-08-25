@@ -776,6 +776,11 @@ $media-expressions: (
 	transform: translateX(-9999px);
 	animation: fade-in-left 1s cubic-bezier(.55,.3,.24,.99) forwards;
 }
+.fill-in-left{
+	width: 0;
+	opacity: 0;
+	animation: fill-in-left 1s linear forwards;
+}
 .fade-in-right{
 	transform: translateX(9999px);
 	animation: fade-in-right 1s cubic-bezier(.55,.3,.24,.99) forwards;
@@ -810,6 +815,16 @@ $media-expressions: (
 	}
 	to{
 		transform: translateX(0px);
+	}
+}
+@keyframes fill-in-left {
+	10%{
+		width: 10%;
+		opacity: 1;
+	}
+	100%{
+		opacity: 1;
+		width: 100%;
 	}
 }
 @keyframes fade-in-right {

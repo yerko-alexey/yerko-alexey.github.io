@@ -645,6 +645,12 @@
   -webkit-animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards;
           animation: fade-in-left 1s cubic-bezier(0.55, 0.3, 0.24, 0.99) forwards; }
 
+.fill-in-left {
+  width: 0;
+  opacity: 0;
+  -webkit-animation: fill-in-left 1s linear forwards;
+          animation: fill-in-left 1s linear forwards; }
+
 .fade-in-right {
   -webkit-transform: translateX(9999px);
       -ms-transform: translateX(9999px);
@@ -745,6 +751,22 @@
   to {
     -webkit-transform: translateX(0px);
             transform: translateX(0px); } }
+
+@-webkit-keyframes fill-in-left {
+  10% {
+    width: 10%;
+    opacity: 1; }
+  100% {
+    opacity: 1;
+    width: 100%; } }
+
+@keyframes fill-in-left {
+  10% {
+    width: 10%;
+    opacity: 1; }
+  100% {
+    opacity: 1;
+    width: 100%; } }
 
 @-webkit-keyframes fade-in-right {
   from {
