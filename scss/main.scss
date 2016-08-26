@@ -37,14 +37,11 @@ $media-expressions: (
 	overflow: hidden;
 	&.show-menu{
 		#header {
-			-webkit-transform: translate3d(0,0,0);
-			transform: translate3d(0,0,0);
+			@include transform(translate3d(0,0,0));
 		}
 		#main{
-			-webkit-transition-delay: 0.1s;
-			transition-delay: 0.1s;
-			-webkit-transform: translate3d(100px,0,0);
-			transform: translate3d(100px,0,0);
+			@include transition-delay(0.1s);
+			@include transform(translate3d(100px,0,0));
 		}
 	}
 	&.show-feedback{
@@ -59,36 +56,33 @@ $media-expressions: (
 		}
 		#main,
 		.modal-background{
-			transform-style: preserve-3d;
-			transform-origin: 50% 100%;
 			animation: open-modal-top 1s forwards ease-in;
+			transform-style: preserve-3d;
+			@include transform-origin(50% 100%);
 		}
 
 	}
 	#header {
-		position: fixed;
-		z-index: 1001;
 		width: 300px;
+		position: fixed;
 		top: 0;
 		bottom: 0;
 		font-size: 1.15em;
-		-webkit-transform: translate3d(-300px,0,0);
-		transform: translate3d(-300px,0,0);
-		-webkit-transition: -webkit-transform 0.3s;
-		transition: transform 0.3s;
+		z-index: 1001;
+		@include transform(translate3d(-300px,0,0));
+		@include transition(transform 0.3s);
 		.menu {
-			background: rgba(55, 58, 71, 1);
-			width: calc(100% - 120px);
-			height: 100%;
+			@include size(calc(100% - 120px), 100%);
 			padding: 2em 1em;
+			background: rgba(55, 58, 71, 1);
 			.icon-list {
 				width: 280px;
 				a {
-					outline: none;
 					display: block;
 					padding: 0.8em;
 					font-size: 1.2em;
 					color: #006962;
+					outline: none;
 					&:hover{
 						text-decoration: none;
 						i{
@@ -103,80 +97,74 @@ $media-expressions: (
 					}
 					span {
 						margin-left: 10px;
+						font-size: 0.75em;
 						text-transform: uppercase;
 						font-weight: 700;
 						letter-spacing: 1px;
-						font-size: 0.75em;
 					}
 				}
 			}
 
 		}
 		.morph-shape {
+			@include size(120px, 100%);
 			position: absolute;
-			width: 120px;
-			height: 100%;
 			top: 0;
 			right: 0;
 			fill: #373a47;
 			z-index: 1000;
 		}
 		.close-button {
-			width: 16px;
-			height: 16px;
+			@include size(16px);
 			position: absolute;
 			right: 1em;
 			top: 1em;
 			overflow: hidden;
 			text-indent: 16px;
 			border: none;
-			z-index: 1001;
 			background: transparent;
 			color: transparent;
+			z-index: 1001;
 			&:before,
 			&:after {
 				content: '';
+				@include size(2px, 100%);
 				position: absolute;
-				width: 2px;
-				height: 100%;
 				top: 0;
 				left: 50%;
 				background: #95a5a6;
 			}
 			&:before {
-				-webkit-transform: rotate(45deg);
-				transform: rotate(45deg);
+				@include transform(rotate(45deg));
 			}
 			&:after {
-				-webkit-transform: rotate(-45deg);
-				transform: rotate(-45deg);
+				@include transform(rotate(-45deg));
 			}
 		}
 	}
 	.menu-button {
+		@include size(2.5em, 2.25em);
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 1000;
 		margin: 1em;
 		padding: 0;
-		width: 2.5em;
-		height: 2.25em;
 		border: none;
 		text-indent: 2.5em;
 		font-size: 1.5em;
 		color: transparent;
 		background: transparent;
 		opacity: 0.3;
-		transition: all 0.5s ease-in-out;
+		z-index: 1000;
+		@include transition(all 0.5s ease-in-out);
 		&:before {
+			content: '';
 			position: absolute;
 			top: 0.5em;
 			right: 0.5em;
 			bottom: 0.5em;
 			left: 0.5em;
 			background: linear-gradient(#373a47 20%, transparent 20%, transparent 40%, #373a47 40%, #373a47 60%, transparent 60%, transparent 80%, #373a47 80%);
-			content: '';
 			&:hover {
 				opacity: 0.6;
 			}
@@ -194,14 +182,14 @@ $media-expressions: (
 		top: 0;
 	}
 	#main {
-		position: relative;
 		width: 100%;
 		min-height: 100vh;
+		position: relative;
 		z-index: 1;
 		@include transition(transform 0.3s);
 		ul {
-			list-style-type: none;
 			padding: 0;
+			list-style-type: none;
 		}
 		#about {
 			padding: 50px 15px 0 15px;
@@ -216,59 +204,56 @@ $media-expressions: (
 				}
 			}
 			.navigation {
-				position: absolute;
 				display: inline-block;
-				@include user-select(none);
-				cursor: pointer;
+				position: absolute;
 				right: -5px;
 				top: 140px;
+				cursor: pointer;
 				z-index: 2000;
+				@include user-select(none);
 				.trigger {
-					background: none;
-					width: 80px;
-					height: 80px;
-					padding: 0;
+					@include size(80px);
+					position: relative;
 					margin: 0;
+					padding: 0;
+					background: none;
+					color: #333333;
 					border: none;
 					outline: none;
 					text-align: center;
 					font-size: 1.5em;
-					color: #333333;
-					position: relative;
 					z-index: 2000;
 					-webkit-tap-highlight-color: transparent;
 					span {
-						opacity: 0;
 						position: absolute;
+						opacity: 0;
 					}
 				}
 				.navigation__items {
+					@include size(100%);
 					position: absolute;
-					width: 100%;
-					height: 100%;
 					top: 0;
-					padding: 0;
 					margin: 0;
+					padding: 0;
 					list-style-type: none;
 					text-align: center;
 					li {
-						width: 60%;
-						height: 60%;
+						@include size(60%);
+						position: absolute;
 						top: 10%;
 						left: 10%;
-						line-height: 48px;
 						font-size: 2em;
-						position: absolute;
+						line-height: 48px;
 						@include transform-origin(50% 50%);
 						@include transform(scale3d(0.5, 0.5, 1));
 						@include transition(transform 0.25s ease-out);
 						a {
 							display: block;
+							overflow: hidden;
 							background: #333333;
 							color: #006962;
 							border-radius: 50%;
 							outline: none;
-							overflow: hidden;
 							-webkit-tap-highlight-color: transparent;
 							&:hover,
 							&:focus {
@@ -277,8 +262,8 @@ $media-expressions: (
 							}
 							span {
 								position: absolute;
-								color: transparent;
 								top: 100%;
+								color: transparent;
 								pointer-events: none;
 							}
 						}
@@ -306,9 +291,8 @@ $media-expressions: (
 					}
 				}
 				.morph {
+					@include size(100%);
 					position: absolute;
-					width: 100%;
-					height: 100%;
 					top: 0;
 					left: 0;
 					z-index: 100;
@@ -332,31 +316,31 @@ $media-expressions: (
 			#skills {
 				padding: 15px;
 				.skillsInner {
+					margin: 0;
 					padding-top: 50px;
 					padding-bottom: 50px;
-					margin: 0;
 				}
 			}
 		}
 		#contacts{
 			h1{
+				margin: 50px 0 25px 0;
 				font-size: 3em;
 				letter-spacing: 0.5em;
 				text-transform: uppercase;
-				margin: 50px 0 25px 0;
 				color: #006962;
 			}
 			p{
+				margin-bottom: 25px;
 				font-size: 1.5em;
 				letter-spacing: 0.1em;
 				color: #777777;
-				margin-bottom: 25px;
 			}
 			input{
-				border: 0;
-				display: block;
 				width: 0;
+				display: block;
 				margin-bottom: 25px;
+				border: 0;
 			}
 			input[type=text]{
 				&:first-child{
@@ -366,10 +350,10 @@ $media-expressions: (
 			input[type=text],
 			input[type=email]{
 				font-size: 1.5em;
-				letter-spacing: 0.1em;
-				color: #777777;
 				line-height: 2em;
+				letter-spacing: 0.1em;
 				background: transparent;
+				color: #777777;
 				border: 0;
 				border-bottom: 2px solid #006962;
 				@include transition(border-bottom 1s ease-out);
@@ -396,23 +380,21 @@ $media-expressions: (
 				padding: 50px 0 0 0;
 
 				span{
-					width: 30px;
-					height: 30px;
-					border-radius: 50% 50% 50% 0;
-					background: #00b5aa;
+					@include size(30px);
 					position: absolute;
-					transform: rotate(-45deg);
 					left: 50%;
 					top: 30px;
 					margin: -20px 0 0 -20px;
+					border-radius: 50% 50% 50% 0;
+					background: #00b5aa;
+					@include transform(rotate(-45deg));
 					&:after{
 						content: "";
-						width: 14px;
-						height: 14px;
-						margin: 8px 0 0 8px;
-						background: #e6e6e6;
+						@include size(14px);
 						position: absolute;
+						margin: 8px 0 0 8px;
 						border-radius: 50%;
+						background: #e6e6e6;
 					}
 				}
 			}
@@ -421,14 +403,14 @@ $media-expressions: (
 				float: right;
 				padding: 50px 0 0 0 ;
 				li{
-					margin-left: -4px;
 					display: inline-block;
+					margin-left: -4px;
 					&:first-child{
 						margin-left: 0;
 					}
 					a{
-						color: #00b5aa;
 						font-size: 2em;
+						color: #00b5aa;
 						&:hover{
 							color: #006962;
 							text-decoration: none;
@@ -440,33 +422,33 @@ $media-expressions: (
 		.main-title {
 			width: 80%;
 			position: absolute;
+			top: 50%;
+			left: 50%;
 			margin: 0;
 			padding: 0;
 			text-align: center;
-			top: 50%;
-			left: 50%;
 			@include transform(translate3d(-50%, -50%, 0));
 			h1 {
 				font-size: 4.2em;
 				letter-spacing: 0.1em;
-				color: #006962;
 				text-transform: uppercase;
 				text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+				color: #006962;
 			}
 			p {
 				font-size: 2em;
 				letter-spacing: 0.1em;
-				color: #777777;
 				text-transform: uppercase;
 				text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+				color: #777777;
 			}
 			.thin {
 				font-weight: 200;
 			}
 		}
 		.portfolioInner {
-			text-align: center;
 			padding: 5% 0;
+			text-align: center;
 			&:nth-child(even){
 				.innerText {
 					float: right;
@@ -487,24 +469,23 @@ $media-expressions: (
 					}
 				}
 				h1{
-					line-height: 50px;
 					margin: 91px 0 0 0;
+					line-height: 50px;
 					a {
 						color: #00b5aa;
 					}
 				}
 				h3 {
-					line-height: 50px;
 					margin: 0 0 91px 0;
+					line-height: 50px;
 					color: #777777;
 				}
 			}
 			.innerImage{
 				padding: 41px 15px;
 				> a {
+					@include size(200px);
 					display: block;
-					width: 200px;
-					height: 200px;
 					position: relative;
 					margin: 0 auto;
 					text-decoration: none;
@@ -548,11 +529,11 @@ $media-expressions: (
 					}
 					img {
 						position: absolute;
-						margin: auto;
 						top: 0;
 						bottom: 0;
 						left: 0;
 						right: 0;
+						margin: auto;
 						@include transition(all 1s ease);
 					}
 				}
@@ -568,49 +549,44 @@ $media-expressions: (
 				}
 				&.brandmaster{
 					img {
-						width: 120px;
-						height: auto;
+						@include size(120px, auto);
 					}
 				}
 				&.adminPanel{
 					img {
-						width: 100px;
-						height: 100px;
+						@include size(100px);
 					}
 				}
 			}
 		}
 		.works {
 			height: 200px;
-			text-align: center;
 			position: relative;
+			text-align: center;
 			background: rgba(0, 105, 98, 0.7);
 			&:before{
 				content: '';
+				@include size(50%, 0);
 				position: absolute;
 				left: 0;
-				width: 50%;
-				height: 0;
 				border-top: 200px solid transparent;
 				border-left: 585px solid $body-bg;
 				z-index: 1;
 			}
 			&:after{
 				content: '';
+				@include size(50%, 0);
 				position: absolute;
 				right: 0;
-				width: 50%;
-				height: 0;
 				border-top: 200px solid transparent;
 				border-right: 585px solid $body-bg;
 				z-index: 1;
 			}
 			img {
+				@include size(100px);
 				position: absolute;
-				display: inline-block;
 				left: calc(50% - 100px);
-				width: 100px;
-				height: 100px;
+				display: inline-block;
 				margin: 50px;
 				z-index: 200;
 			}
@@ -621,9 +597,9 @@ $media-expressions: (
 				margin-top: -40%;
 			}
 			figcaption {
-				margin: 0 auto 0 auto;
-				max-width: 40em;
+				margin: 0 auto;
 				width: 95%;
+				max-width: 40em;
 				text-align: center;
 				h2 {
 					font-weight: 300;
@@ -642,8 +618,8 @@ $media-expressions: (
 				}
 			}
 			.drawings {
-				position: relative;
 				display: none;
+				position: relative;
 				max-height: 600px;
 			}
 			.illustration {
@@ -687,55 +663,55 @@ $media-expressions: (
 #modals{
 	position: relative;
 	.modal-background{
+		display: none;
 		position: fixed;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
 		z-index: 2000;
-		display: none;
 		background: rgba(0, 105, 98, 0.5);
 
 	}
 	#feedbackModal{
+		height: auto;
+		display: none;
 		position: fixed;
 		top: 20%;
-		height: auto;
 		z-index: 3000;
-		display: none;
 		p{
 			&:first-child{
 				width: 100%;
 				display: block;
+				margin: 0;
 				padding: 15px;
-				background: rgb(0, 105, 98);
 				border-top-left-radius: 10px;
 				border-top-right-radius: 10px;
-				color: #fff;
 				font-weight: 800;
 				text-transform: uppercase;
 				letter-spacing: 0.2em;
-				margin: 0;
+				background: rgb(0, 105, 98);
+				color: #fff;
 			}
 			&:nth-child(2){
 				width: 100%;
 				display: block;
-				padding: 25px;
-				background: #00b5aa;
 				margin: 0;
-				color: #fff;
+				padding: 25px;
 				border-bottom-left-radius: 10px;
 				border-bottom-right-radius: 10px;
+				background: #00b5aa;
+				color: #fff;
 			}
 		}
 		button{
 			position: absolute;
 			right: 30px;
 			top: 13px;
-			color: #fff;
-			background: transparent;
 			border: 0;
 			font-size: 0;
+			background: transparent;
+			color: #fff;
 			&:before{
 				font-size: 20px;
 			}
@@ -778,8 +754,7 @@ $media-expressions: (
 				}
 			}
 			.works {
-				width: 320px;
-				height: 90px;
+				@include size(320px, 90px);
 				left: calc(50% - 160px);
 				&:before{
 					border-top: 90px solid transparent;
@@ -790,8 +765,7 @@ $media-expressions: (
 					border-right: 160px solid $body-bg;
 				}
 				img{
-					width: 70px;
-					height: 70px;
+					@include size(70px);
 					left: calc(50% - 35px);
 					margin: 10px 0;
 				}
@@ -851,10 +825,10 @@ $media-expressions: (
 					}
 				}
 				.form-error{
+					margin: 5px;
 					padding: 0;
 					font-size: 1em;
 					text-align: justify;
-					margin: 5px;
 				}
 				input[type=submit]{
 					float: none;
@@ -868,9 +842,9 @@ $media-expressions: (
 					}
 				}
 				.social{
-					padding: 10px;
 					display: block;
 					float: none;
+					padding: 10px;
 					text-align: center;
 					li{
 						a{
@@ -910,8 +884,7 @@ $media-expressions: (
 				}
 			}
 			.works {
-				width: 480px;
-				height: 120px;
+				@include size(480px, 120px);
 				left: calc(50% - 240px);
 				&:before{
 					border-top: 120px solid transparent;
@@ -922,8 +895,7 @@ $media-expressions: (
 					border-right: 240px solid $body-bg;
 				}
 				img{
-					width: 70px;
-					height: 70px;
+					@include size(70px);
 					left: calc(50% - 35px);
 					margin: 25px 0;
 				}
@@ -982,10 +954,10 @@ $media-expressions: (
 					}
 				}
 				.form-error{
+					margin: 5px;
 					padding: 0;
 					font-size: 1em;
 					text-align: justify;
-					margin: 5px;
 				}
 				input[type=submit]{
 					float: none;
@@ -1047,10 +1019,10 @@ $media-expressions: (
 					}
 				}
 				.form-error{
+					margin: 5px;
 					padding: 0;
 					font-size: 1em;
 					text-align: justify;
-					margin: 5px;
 				}
 				input[type=submit]{
 					float: none;
@@ -1079,9 +1051,6 @@ $media-expressions: (
 			}
 		}
 	}
-}
-@include media(">widescreen") {
-
 }
 // - Media //
 
