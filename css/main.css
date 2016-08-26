@@ -522,11 +522,12 @@
             transition: fill 0.3s; }
         #wrapper #main #about .navigation .navigation--open .morph svg path {
           fill: #777; }
-    #wrapper #main #skills {
-      padding: 15px; }
-      #wrapper #main #skills .skillsInner {
-        padding-top: 50px;
-        padding-bottom: 50px; }
+      #wrapper #main #about #skills {
+        padding: 15px; }
+        #wrapper #main #about #skills .skillsInner {
+          padding-top: 50px;
+          padding-bottom: 50px;
+          margin: 0; }
     #wrapper #main #contacts h1 {
       font-size: 3em;
       letter-spacing: 0.5em;

@@ -329,12 +329,13 @@ $media-expressions: (
 					}
 				}
 			}
-		}
-		#skills {
-			padding: 15px;
-			.skillsInner {
-				padding-top: 50px;
-				padding-bottom: 50px;
+			#skills {
+				padding: 15px;
+				.skillsInner {
+					padding-top: 50px;
+					padding-bottom: 50px;
+					margin: 0;
+				}
 			}
 		}
 		#contacts{
