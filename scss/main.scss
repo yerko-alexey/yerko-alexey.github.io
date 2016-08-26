@@ -755,6 +755,9 @@ $media-expressions: (
 		.menu-button{
 			margin: 5px;
 		}
+		#dots-canvas {
+			display: none;
+		}
 		#main{
 			.main-title{
 				h1{
@@ -857,6 +860,9 @@ $media-expressions: (
 	#wrapper{
 		.menu-button{
 			margin: 5px;
+		}
+		#dots-canvas {
+			display: none;
 		}
 		#main{
 			.main-title{

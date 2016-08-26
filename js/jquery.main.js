@@ -185,7 +185,7 @@ function swapContent(address){
 
 //Header dots function//
 function dots() {
-    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+    var width, height, canvas, ctx, points, target, animateHeader = true;
     // Main
     initHeader();
     initAnimation();
@@ -194,8 +194,6 @@ function dots() {
         width = window.innerWidth;
         height = window.innerHeight;
         target = {x: width/2, y: height/2};
-        //largeHeader = document.getElementById('main');
-        //largeHeader.style.height = height+'px';
         canvas = document.getElementById('dots-canvas');
         canvas.width = width;
         canvas.height = height;
@@ -272,7 +270,6 @@ function dots() {
     function resize() {
         width = window.innerWidth;
         height = window.innerHeight;
-        //largeHeader.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
     }
