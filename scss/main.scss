@@ -805,7 +805,33 @@ $media-expressions: (
 					}
 				}
 				.navigation{
-					right: calc(50% - 120px);
+					right: calc(50% - 40px);
+					top: 160px;
+					&.navigation--open{
+						.navigation__items{
+							li{
+								&:first-child {
+									@include transform(scale3d(1, 1, 1) translate3d(-110px, 100px, 0));
+								}
+								&:nth-child(2) {
+									@include transform(scale3d(1, 1, 1) translate3d(-50px, 100px, 0));
+
+								}
+								&:nth-child(3) {
+									@include transform(scale3d(1, 1, 1) translate3d(10px, 100px, 0));
+
+								}
+								&:nth-child(4) {
+									@include transform(scale3d(1, 1, 1) translate3d(70px, 100px, 0));
+
+								}
+								&:nth-child(5) {
+									@include transform(scale3d(1, 1, 1) translate3d(130px, 100px, 0));
+
+								}
+							}
+						}
+					}
 				}
 				.expand{
 					margin-left: calc(50% - 75px);
@@ -815,6 +841,9 @@ $media-expressions: (
 				h1{
 					font-size: 2em;
 					text-align: center;
+				}
+				p{
+					font-size: 1em;
 				}
 				.req{
 					&:nth-child(3){
@@ -908,7 +937,33 @@ $media-expressions: (
 					}
 				}
 				.navigation{
-					right: calc(50% - 120px);
+					right: calc(50% - 40px);
+					top: 160px;
+					&.navigation--open{
+						.navigation__items{
+							li{
+								&:first-child {
+									@include transform(scale3d(1, 1, 1) translate3d(-160px, 0, 0));
+								}
+								&:nth-child(2) {
+									@include transform(scale3d(1, 1, 1) translate3d(-113.14px, 113.14px, 0));
+
+								}
+								&:nth-child(3) {
+									@include transform(scale3d(1, 1, 1) translate3d(0, 160px, 0));
+
+								}
+								&:nth-child(4) {
+									@include transform(scale3d(1, 1, 1) translate3d(113.14px, 113.14px, 0));
+
+								}
+								&:nth-child(5) {
+									@include transform(scale3d(1, 1, 1) translate3d(160px, 0, 0));
+
+								}
+							}
+						}
+					}
 				}
 				.expand{
 					margin-left: calc(50% - 75px);
@@ -917,6 +972,9 @@ $media-expressions: (
 			#contacts{
 				h1{
 					font-size: 2em;
+				}
+				p{
+					font-size: 1em;
 				}
 				.req{
 					&:nth-child(3){
@@ -979,6 +1037,9 @@ $media-expressions: (
 			#contacts{
 				h1{
 					font-size: 2em;
+				}
+				p{
+					font-size: 1em;
 				}
 				.req{
 					&:nth-child(3){
