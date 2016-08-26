@@ -170,7 +170,9 @@ function swapContent(address){
                         }
                     }
                     else {
-                        dots.css('display', 'block');
+                        if( main.height() > 768 || main.width() > 768){
+                            dots.css('display', 'block');
+                        }
                     }
                 });
             },

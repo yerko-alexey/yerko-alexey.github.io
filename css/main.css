@@ -867,8 +867,6 @@
 @media (max-width: 480px) {
   #wrapper .menu-button {
     margin: 5px; }
-  #wrapper #dots-canvas {
-    display: none; }
   #wrapper #main .main-title h1 {
     font-size: 2em; }
   #wrapper #main .main-title p {
@@ -926,8 +924,6 @@
 @media (min-width: 481px) and (max-width: 768px) {
   #wrapper .menu-button {
     margin: 5px; }
-  #wrapper #dots-canvas {
-    display: none; }
   #wrapper #main .main-title h1 {
     font-size: 3em; }
   #wrapper #main .main-title p {
