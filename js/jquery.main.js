@@ -1,7 +1,10 @@
 $(document).ready( function(){
     dots();
     if(location.pathname === '/index.html' || location.pathname === '/'){
-        $('#dots-canvas').css('display', 'block');
+        var main = $('#main');
+        if( main.height() > 768 && main.width() > 768){
+            $('#dots-canvas').css('display', 'block');
+        }
     }
     if ( document.getElementById('navigation') ) {
         navigation();
@@ -170,7 +173,7 @@ function swapContent(address){
                         }
                     }
                     else {
-                        if( main.height() > 768 || main.width() > 768){
+                        if( main.height() > 768 && main.width() > 768){
                             dots.css('display', 'block');
                         }
                     }
