@@ -194,7 +194,7 @@ function dots() {
         width = window.innerWidth;
         height = window.innerHeight;
         target = {x: width/2, y: height/2};
-        largeHeader = document.getElementById('main');
+        //largeHeader = document.getElementById('main');
         //largeHeader.style.height = height+'px';
         canvas = document.getElementById('dots-canvas');
         canvas.width = width;
@@ -272,7 +272,7 @@ function dots() {
     function resize() {
         width = window.innerWidth;
         height = window.innerHeight;
-        largeHeader.style.height = height+'px';
+        //largeHeader.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
     }
