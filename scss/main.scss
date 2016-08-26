@@ -2,7 +2,7 @@ $breakpoints: (
   'xs-phone': 320px,
   'phone': 480px,
   'tablet': 768px,
-  'desktop': 1024px,
+  'desktop': 992px,
   'widescreen': 1200px
 );
 
@@ -31,7 +31,9 @@ $media-expressions: (
 @import url("font-awesome.min.css");
 
 // General //
+
 #wrapper {
+	min-width: 320px;
 	overflow: hidden;
 	&.show-menu{
 		#header {
@@ -165,6 +167,8 @@ $media-expressions: (
 		font-size: 1.5em;
 		color: transparent;
 		background: transparent;
+		opacity: 0.3;
+		transition: all 0.5s ease-in-out;
 		&:before {
 			position: absolute;
 			top: 0.5em;
@@ -173,10 +177,12 @@ $media-expressions: (
 			left: 0.5em;
 			background: linear-gradient(#373a47 20%, transparent 20%, transparent 40%, #373a47 40%, #373a47 60%, transparent 60%, transparent 80%, #373a47 80%);
 			content: '';
-
-		&:hover {
-			opacity: 0.6;
+			&:hover {
+				opacity: 0.6;
+			}
 		}
+		&:hover {
+			opacity: 1;
 		}
 	}
 	#dots-canvas {
@@ -198,7 +204,7 @@ $media-expressions: (
 			padding: 0;
 		}
 		#about {
-			padding: 50px 15px;
+			padding: 50px 15px 0 15px;
 			img {
 				z-index: 100;
 			}
@@ -325,7 +331,7 @@ $media-expressions: (
 			}
 		}
 		#skills {
-			padding: 50px 15px;
+			padding: 15px;
 			.skillsInner {
 				padding-top: 50px;
 				padding-bottom: 50px;
@@ -336,8 +342,7 @@ $media-expressions: (
 				font-size: 3em;
 				letter-spacing: 0.5em;
 				text-transform: uppercase;
-				margin-top: 50px;
-				margin-bottom: 25px;
+				margin: 50px 0 25px 0;
 				color: #006962;
 			}
 			p{
@@ -372,19 +377,15 @@ $media-expressions: (
 				}
 			}
 			input[type=submit]{
-				width: auto;
-				float: right;
-				margin: 25px 0;
+				width: 25%;
+				margin: 0;
 				font-weight: 600;
 				text-transform: uppercase;
 				letter-spacing: 0.3em;
 			}
 			.form-error{
-				float: left;
 				opacity: 0;
 				font-size: 1.25em;
-				padding: 10px 30px;
-				margin: 25px 0;
 				color: #ff0000;
 				@include transition(all 1s ease-out);
 			}
@@ -436,6 +437,7 @@ $media-expressions: (
 			}
 		}
 		.main-title {
+			width: 80%;
 			position: absolute;
 			margin: 0;
 			padding: 0;
@@ -463,9 +465,10 @@ $media-expressions: (
 		}
 		.portfolioInner {
 			text-align: center;
-			padding: 10% 0;
+			padding: 5% 0;
 			&:nth-child(even){
 				.innerText {
+					float: right;
 					text-align: left;
 				}
 			}
@@ -475,7 +478,7 @@ $media-expressions: (
 				}
 			}
 			.innerText{
-				height: 200px;
+				height: 282px;
 				a {
 					outline: none;
 					&:hover {
@@ -484,18 +487,19 @@ $media-expressions: (
 				}
 				h1{
 					line-height: 50px;
-					margin: 50px 0 0 0;
+					margin: 91px 0 0 0;
 					a {
 						color: #00b5aa;
 					}
 				}
 				h3 {
 					line-height: 50px;
-					margin: 0 0 50px 0;
+					margin: 0 0 91px 0;
 					color: #777777;
 				}
 			}
 			.innerImage{
+				padding: 41px 15px;
 				> a {
 					display: block;
 					width: 200px;
@@ -575,33 +579,29 @@ $media-expressions: (
 				}
 			}
 		}
-		.container{
-			&:first-child{
-				min-height: 200px;
-			}
-		}
 		.works {
 			height: 200px;
 			text-align: center;
 			position: relative;
+			background: rgba(0, 105, 98, 0.7);
 			&:before{
 				content: '';
 				position: absolute;
 				left: 0;
-				width: 0;
+				width: 50%;
 				height: 0;
-				border-bottom: 200px solid transparent;
-				border-right: 585px solid rgba(0, 105, 98, 0.7);
+				border-top: 200px solid transparent;
+				border-left: 585px solid $body-bg;
 				z-index: 1;
 			}
 			&:after{
 				content: '';
 				position: absolute;
 				right: 0;
-				width: 0;
+				width: 50%;
 				height: 0;
-				border-bottom: 200px solid transparent;
-				border-left: 585px solid rgba(0, 105, 98, 0.7);
+				border-top: 200px solid transparent;
+				border-right: 585px solid $body-bg;
 				z-index: 1;
 			}
 			img {
@@ -617,7 +617,7 @@ $media-expressions: (
 		.examples {
 			padding-top: 50px;
 			.iphone {
-				margin-top: -200px;
+				margin-top: -40%;
 			}
 			figcaption {
 				margin: 0 auto 0 auto;
@@ -681,7 +681,6 @@ $media-expressions: (
 				}
 			}
 		}
-
 	}
 }
 #modals{
@@ -748,4 +747,280 @@ $media-expressions: (
 .more {
 	display: none;
 }
+
+// Media //
+@include media("<=phone") {
+	#wrapper{
+		.menu-button{
+			margin: 5px;
+		}
+		#main{
+			.main-title{
+				h1{
+					font-size: 2em;
+				}
+				p{
+					font-size: 1em;
+				}
+			}
+			.portfolioInner{
+				&.container{
+					.innerText{
+						height: auto;
+						text-align: center;
+					}
+				}
+				.innerText{
+					h3{
+						margin-bottom: 10px;
+					}
+				}
+			}
+			.works {
+				width: 320px;
+				height: 90px;
+				left: calc(50% - 160px);
+				&:before{
+					border-top: 90px solid transparent;
+					border-left: 160px solid $body-bg;
+				}
+				&:after{
+					border-top: 90px solid transparent;
+					border-right: 160px solid $body-bg;
+				}
+				img{
+					width: 70px;
+					height: 70px;
+					left: calc(50% - 35px);
+					margin: 10px 0;
+				}
+			}
+			#about{
+				.row{
+					div{
+						&:first-child{
+							text-align: center;
+						}
+					}
+				}
+				.navigation{
+					right: calc(50% - 120px);
+				}
+				.expand{
+					margin-left: calc(50% - 75px);
+				}
+			}
+			#contacts{
+				h1{
+					font-size: 2em;
+					text-align: center;
+				}
+				.req{
+					&:nth-child(3){
+						margin-bottom: 5px;
+					}
+				}
+				.form-error{
+					padding: 0;
+					font-size: 1em;
+					text-align: justify;
+					margin: 5px;
+				}
+				input[type=submit]{
+					float: none;
+					margin: 0 auto 30px auto;
+				}
+				.location{
+					display: block;
+					text-align: center;
+					span{
+						text-align: left;
+					}
+				}
+				.social{
+					padding: 10px;
+					display: block;
+					float: none;
+					text-align: center;
+					li{
+						a{
+
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@include media(">phone","<=tablet") {
+	#wrapper{
+		.menu-button{
+			margin: 5px;
+		}
+		#main{
+			.main-title{
+				h1{
+					font-size: 3em;
+				}
+				p{
+					font-size: 1.5em;
+				}
+			}
+			.portfolioInner{
+				&.container{
+					.innerText{
+						height: auto;
+						text-align: center;
+					}
+				}
+				.innerText{
+					h3{
+						margin-bottom: 10px;
+					}
+				}
+			}
+			.works {
+				width: 480px;
+				height: 120px;
+				left: calc(50% - 240px);
+				&:before{
+					border-top: 120px solid transparent;
+					border-left: 240px solid $body-bg;
+				}
+				&:after{
+					border-top: 120px solid transparent;
+					border-right: 240px solid $body-bg;
+				}
+				img{
+					width: 70px;
+					height: 70px;
+					left: calc(50% - 35px);
+					margin: 25px 0;
+				}
+			}
+			#about{
+				.row{
+					div{
+						&:first-child{
+							text-align: center;
+						}
+					}
+				}
+				.navigation{
+					right: calc(50% - 120px);
+				}
+				.expand{
+					margin-left: calc(50% - 75px);
+				}
+			}
+			#contacts{
+				h1{
+					font-size: 2em;
+				}
+				.req{
+					&:nth-child(3){
+						margin-bottom: 5px;
+					}
+				}
+				.form-error{
+					padding: 0;
+					font-size: 1em;
+					text-align: justify;
+					margin: 5px;
+				}
+				input[type=submit]{
+					float: none;
+					margin: 0 auto 30px auto;
+				}
+			}
+		}
+	}
+}
+@include media(">tablet","<=desktop") {
+	#wrapper{
+		#main{
+			.portfolioInner{
+				&.container{
+					.innerText{
+						height: auto;
+						text-align: center;
+					}
+				}
+				.innerText{
+					h3{
+						margin-bottom: 10px;
+					}
+				}
+			}
+			.works {
+				&:before{
+					border-left: 375px solid $body-bg;
+				}
+				&:after{
+					border-right: 375px solid $body-bg;
+				}
+			}
+			#about{
+				.row{
+					div{
+						&:first-child{
+							text-align: center;
+						}
+					}
+				}
+				.navigation{
+					right: calc(50% - 120px);
+				}
+				.expand{
+					margin-left: calc(50% - 75px);
+				}
+			}
+			#contacts{
+				h1{
+					font-size: 2em;
+				}
+				.req{
+					&:nth-child(3){
+						margin-bottom: 5px;
+					}
+				}
+				.form-error{
+					padding: 0;
+					font-size: 1em;
+					text-align: justify;
+					margin: 5px;
+				}
+				input[type=submit]{
+					float: none;
+					margin: 0 auto 30px auto;
+				}
+			}
+		}
+	}
+
+}
+@include media(">desktop","<=widescreen") {
+	#wrapper{
+		#main{
+			.works {
+				&:before{
+					border-left: 485px solid $body-bg;
+				}
+				&:after{
+					border-right: 485px solid $body-bg;
+				}
+			}
+			#contacts{
+				.form-error{
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+@include media(">widescreen") {
+
+}
+// - Media //
+
 // - General //

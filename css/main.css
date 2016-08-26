@@ -267,6 +267,7 @@
             animation-timing-function: ease-out; } }
 
 #wrapper {
+  min-width: 320px;
   overflow: hidden; }
   #wrapper.show-menu #header {
     -webkit-transform: translate3d(0, 0, 0);
@@ -377,7 +378,10 @@
     text-indent: 2.5em;
     font-size: 1.5em;
     color: transparent;
-    background: transparent; }
+    background: transparent;
+    opacity: 0.3;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
     #wrapper .menu-button:before {
       position: absolute;
       top: 0.5em;
@@ -389,6 +393,8 @@
       content: ''; }
       #wrapper .menu-button:before:hover {
         opacity: 0.6; }
+    #wrapper .menu-button:hover {
+      opacity: 1; }
   #wrapper #dots-canvas {
     display: none;
     position: absolute;
@@ -407,7 +413,7 @@
       list-style-type: none;
       padding: 0; }
     #wrapper #main #about {
-      padding: 50px 15px; }
+      padding: 50px 15px 0 15px; }
       #wrapper #main #about img {
         z-index: 100; }
       #wrapper #main #about .row div:first-child {
@@ -517,7 +523,7 @@
         #wrapper #main #about .navigation .navigation--open .morph svg path {
           fill: #777; }
     #wrapper #main #skills {
-      padding: 50px 15px; }
+      padding: 15px; }
       #wrapper #main #skills .skillsInner {
         padding-top: 50px;
         padding-bottom: 50px; }
@@ -525,8 +531,7 @@
       font-size: 3em;
       letter-spacing: 0.5em;
       text-transform: uppercase;
-      margin-top: 50px;
-      margin-bottom: 25px;
+      margin: 50px 0 25px 0;
       color: #006962; }
     #wrapper #main #contacts p {
       font-size: 1.5em;
@@ -555,18 +560,14 @@
       #wrapper #main #contacts input[type=email].error {
         border-bottom-color: #ff0000; }
     #wrapper #main #contacts input[type=submit] {
-      width: auto;
-      float: right;
-      margin: 25px 0;
+      width: 25%;
+      margin: 0;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.3em; }
     #wrapper #main #contacts .form-error {
-      float: left;
       opacity: 0;
       font-size: 1.25em;
-      padding: 10px 30px;
-      margin: 25px 0;
       color: #ff0000;
       -webkit-transition: all 1s ease-out;
       transition: all 1s ease-out; }
@@ -610,6 +611,7 @@
             color: #006962;
             text-decoration: none; }
     #wrapper #main .main-title {
+      width: 80%;
       position: absolute;
       margin: 0;
       padding: 0;
@@ -635,117 +637,119 @@
         font-weight: 200; }
     #wrapper #main .portfolioInner {
       text-align: center;
-      padding: 10% 0; }
+      padding: 5% 0; }
       #wrapper #main .portfolioInner:nth-child(even) .innerText {
+        float: right;
         text-align: left; }
       #wrapper #main .portfolioInner:nth-child(odd) .innerText {
         text-align: right; }
       #wrapper #main .portfolioInner .innerText {
-        height: 200px; }
+        height: 282px; }
         #wrapper #main .portfolioInner .innerText a {
           outline: none; }
           #wrapper #main .portfolioInner .innerText a:hover {
             text-decoration: none; }
         #wrapper #main .portfolioInner .innerText h1 {
           line-height: 50px;
-          margin: 50px 0 0 0; }
+          margin: 91px 0 0 0; }
           #wrapper #main .portfolioInner .innerText h1 a {
             color: #00b5aa; }
         #wrapper #main .portfolioInner .innerText h3 {
           line-height: 50px;
-          margin: 0 0 50px 0;
+          margin: 0 0 91px 0;
           color: #777777; }
-      #wrapper #main .portfolioInner .innerImage > a {
-        display: block;
-        width: 200px;
-        height: 200px;
-        position: relative;
-        margin: 0 auto;
-        text-decoration: none;
-        outline: none; }
-        #wrapper #main .portfolioInner .innerImage > a svg {
-          position: absolute;
-          top: 0;
-          left: 0;
-          -ms-box-shadow: 0 0 15px 0 #323232;
-          -o-box-shadow: 0 0 15px 0 #323232;
-          box-shadow: 0 0 15px 0 #323232;
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg); }
-          #wrapper #main .portfolioInner .innerImage > a svg line {
-            stroke-width: 4;
-            stroke: #00827a;
-            fill: none;
-            stroke-dasharray: 200;
-            -webkit-transition: -webkit-transform 0.6s ease-out;
-            transition: transform 0.6s ease-out; }
-        #wrapper #main .portfolioInner .innerImage > a:hover svg line {
-          -webkit-transform: translateX(-400px);
-          -ms-transform: translateX(-400px);
-          transform: translateX(-400px); }
-          #wrapper #main .portfolioInner .innerImage > a:hover svg line.top {
+      #wrapper #main .portfolioInner .innerImage {
+        padding: 41px 15px; }
+        #wrapper #main .portfolioInner .innerImage > a {
+          display: block;
+          width: 200px;
+          height: 200px;
+          position: relative;
+          margin: 0 auto;
+          text-decoration: none;
+          outline: none; }
+          #wrapper #main .portfolioInner .innerImage > a svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            -ms-box-shadow: 0 0 15px 0 #323232;
+            -o-box-shadow: 0 0 15px 0 #323232;
+            box-shadow: 0 0 15px 0 #323232;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }
+            #wrapper #main .portfolioInner .innerImage > a svg line {
+              stroke-width: 4;
+              stroke: #00827a;
+              fill: none;
+              stroke-dasharray: 200;
+              -webkit-transition: -webkit-transform 0.6s ease-out;
+              transition: transform 0.6s ease-out; }
+          #wrapper #main .portfolioInner .innerImage > a:hover svg line {
             -webkit-transform: translateX(-400px);
             -ms-transform: translateX(-400px);
             transform: translateX(-400px); }
-          #wrapper #main .portfolioInner .innerImage > a:hover svg line.bottom {
-            -webkit-transform: translateX(400px);
-            -ms-transform: translateX(400px);
-            transform: translateX(400px); }
-          #wrapper #main .portfolioInner .innerImage > a:hover svg line.left {
-            -webkit-transform: translateY(400px);
-            -ms-transform: translateY(400px);
-            transform: translateY(400px); }
-          #wrapper #main .portfolioInner .innerImage > a:hover svg line.right {
-            -webkit-transform: translateY(-400px);
-            -ms-transform: translateY(-400px);
-            transform: translateY(-400px); }
-        #wrapper #main .portfolioInner .innerImage > a:hover img {
-          -webkit-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-          transform: scale(1.1); }
-        #wrapper #main .portfolioInner .innerImage > a img {
-          position: absolute;
-          margin: auto;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          -webkit-transition: all 1s ease;
-          transition: all 1s ease; }
-      #wrapper #main .portfolioInner .innerImage.cuda > a svg {
-        background: #87509c; }
-        #wrapper #main .portfolioInner .innerImage.cuda > a svg line {
-          stroke: #00b5aa; }
-      #wrapper #main .portfolioInner .innerImage.brandmaster img {
-        width: 120px;
-        height: auto; }
-      #wrapper #main .portfolioInner .innerImage.adminPanel img {
-        width: 100px;
-        height: 100px; }
-    #wrapper #main .container:first-child {
-      min-height: 200px; }
+            #wrapper #main .portfolioInner .innerImage > a:hover svg line.top {
+              -webkit-transform: translateX(-400px);
+              -ms-transform: translateX(-400px);
+              transform: translateX(-400px); }
+            #wrapper #main .portfolioInner .innerImage > a:hover svg line.bottom {
+              -webkit-transform: translateX(400px);
+              -ms-transform: translateX(400px);
+              transform: translateX(400px); }
+            #wrapper #main .portfolioInner .innerImage > a:hover svg line.left {
+              -webkit-transform: translateY(400px);
+              -ms-transform: translateY(400px);
+              transform: translateY(400px); }
+            #wrapper #main .portfolioInner .innerImage > a:hover svg line.right {
+              -webkit-transform: translateY(-400px);
+              -ms-transform: translateY(-400px);
+              transform: translateY(-400px); }
+          #wrapper #main .portfolioInner .innerImage > a:hover img {
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            transform: scale(1.1); }
+          #wrapper #main .portfolioInner .innerImage > a img {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            -webkit-transition: all 1s ease;
+            transition: all 1s ease; }
+        #wrapper #main .portfolioInner .innerImage.cuda > a svg {
+          background: #87509c; }
+          #wrapper #main .portfolioInner .innerImage.cuda > a svg line {
+            stroke: #00b5aa; }
+        #wrapper #main .portfolioInner .innerImage.brandmaster img {
+          width: 120px;
+          height: auto; }
+        #wrapper #main .portfolioInner .innerImage.adminPanel img {
+          width: 100px;
+          height: 100px; }
     #wrapper #main .works {
       height: 200px;
       text-align: center;
-      position: relative; }
+      position: relative;
+      background: rgba(0, 105, 98, 0.7); }
       #wrapper #main .works:before {
         content: '';
         position: absolute;
         left: 0;
-        width: 0;
+        width: 50%;
         height: 0;
-        border-bottom: 200px solid transparent;
-        border-right: 585px solid rgba(0, 105, 98, 0.7);
+        border-top: 200px solid transparent;
+        border-left: 585px solid #eee;
         z-index: 1; }
       #wrapper #main .works:after {
         content: '';
         position: absolute;
         right: 0;
-        width: 0;
+        width: 50%;
         height: 0;
-        border-bottom: 200px solid transparent;
-        border-left: 585px solid rgba(0, 105, 98, 0.7);
+        border-top: 200px solid transparent;
+        border-right: 585px solid #eee;
         z-index: 1; }
       #wrapper #main .works img {
         position: absolute;
@@ -758,7 +762,7 @@
     #wrapper #main .examples {
       padding-top: 50px; }
       #wrapper #main .examples .iphone {
-        margin-top: -200px; }
+        margin-top: -40%; }
       #wrapper #main .examples figcaption {
         margin: 0 auto 0 auto;
         max-width: 40em;
@@ -858,4 +862,144 @@
 
 .more {
   display: none; }
+
+@media (max-width: 480px) {
+  #wrapper .menu-button {
+    margin: 5px; }
+  #wrapper #main .main-title h1 {
+    font-size: 2em; }
+  #wrapper #main .main-title p {
+    font-size: 1em; }
+  #wrapper #main .portfolioInner.container .innerText {
+    height: auto;
+    text-align: center; }
+  #wrapper #main .portfolioInner .innerText h3 {
+    margin-bottom: 10px; }
+  #wrapper #main .works {
+    width: 320px;
+    height: 90px;
+    left: calc(50% - 160px); }
+    #wrapper #main .works:before {
+      border-top: 90px solid transparent;
+      border-left: 160px solid #eee; }
+    #wrapper #main .works:after {
+      border-top: 90px solid transparent;
+      border-right: 160px solid #eee; }
+    #wrapper #main .works img {
+      width: 70px;
+      height: 70px;
+      left: calc(50% - 35px);
+      margin: 10px 0; }
+  #wrapper #main #about .row div:first-child {
+    text-align: center; }
+  #wrapper #main #about .navigation {
+    right: calc(50% - 120px); }
+  #wrapper #main #about .expand {
+    margin-left: calc(50% - 75px); }
+  #wrapper #main #contacts h1 {
+    font-size: 2em;
+    text-align: center; }
+  #wrapper #main #contacts .req:nth-child(3) {
+    margin-bottom: 5px; }
+  #wrapper #main #contacts .form-error {
+    padding: 0;
+    font-size: 1em;
+    text-align: justify;
+    margin: 5px; }
+  #wrapper #main #contacts input[type=submit] {
+    float: none;
+    margin: 0 auto 30px auto; }
+  #wrapper #main #contacts .location {
+    display: block;
+    text-align: center; }
+    #wrapper #main #contacts .location span {
+      text-align: left; }
+  #wrapper #main #contacts .social {
+    padding: 10px;
+    display: block;
+    float: none;
+    text-align: center; } }
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #wrapper .menu-button {
+    margin: 5px; }
+  #wrapper #main .main-title h1 {
+    font-size: 3em; }
+  #wrapper #main .main-title p {
+    font-size: 1.5em; }
+  #wrapper #main .portfolioInner.container .innerText {
+    height: auto;
+    text-align: center; }
+  #wrapper #main .portfolioInner .innerText h3 {
+    margin-bottom: 10px; }
+  #wrapper #main .works {
+    width: 480px;
+    height: 120px;
+    left: calc(50% - 240px); }
+    #wrapper #main .works:before {
+      border-top: 120px solid transparent;
+      border-left: 240px solid #eee; }
+    #wrapper #main .works:after {
+      border-top: 120px solid transparent;
+      border-right: 240px solid #eee; }
+    #wrapper #main .works img {
+      width: 70px;
+      height: 70px;
+      left: calc(50% - 35px);
+      margin: 25px 0; }
+  #wrapper #main #about .row div:first-child {
+    text-align: center; }
+  #wrapper #main #about .navigation {
+    right: calc(50% - 120px); }
+  #wrapper #main #about .expand {
+    margin-left: calc(50% - 75px); }
+  #wrapper #main #contacts h1 {
+    font-size: 2em; }
+  #wrapper #main #contacts .req:nth-child(3) {
+    margin-bottom: 5px; }
+  #wrapper #main #contacts .form-error {
+    padding: 0;
+    font-size: 1em;
+    text-align: justify;
+    margin: 5px; }
+  #wrapper #main #contacts input[type=submit] {
+    float: none;
+    margin: 0 auto 30px auto; } }
+
+@media (min-width: 769px) and (max-width: 992px) {
+  #wrapper #main .portfolioInner.container .innerText {
+    height: auto;
+    text-align: center; }
+  #wrapper #main .portfolioInner .innerText h3 {
+    margin-bottom: 10px; }
+  #wrapper #main .works:before {
+    border-left: 375px solid #eee; }
+  #wrapper #main .works:after {
+    border-right: 375px solid #eee; }
+  #wrapper #main #about .row div:first-child {
+    text-align: center; }
+  #wrapper #main #about .navigation {
+    right: calc(50% - 120px); }
+  #wrapper #main #about .expand {
+    margin-left: calc(50% - 75px); }
+  #wrapper #main #contacts h1 {
+    font-size: 2em; }
+  #wrapper #main #contacts .req:nth-child(3) {
+    margin-bottom: 5px; }
+  #wrapper #main #contacts .form-error {
+    padding: 0;
+    font-size: 1em;
+    text-align: justify;
+    margin: 5px; }
+  #wrapper #main #contacts input[type=submit] {
+    float: none;
+    margin: 0 auto 30px auto; } }
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  #wrapper #main .works:before {
+    border-left: 485px solid #eee; }
+  #wrapper #main .works:after {
+    border-right: 485px solid #eee; }
+  #wrapper #main #contacts .form-error {
+    padding: 0; } }
 /*# sourceMappingURL=main.css.map */
