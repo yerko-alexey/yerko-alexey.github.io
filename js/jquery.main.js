@@ -123,7 +123,7 @@ function menuListener(){
         history.pushState(null, null, address);
         var getTitle = address.split('.',1).toString();
         var title = getTitle.charAt(0).toUpperCase() + getTitle.substr(1);
-        document.title = "Alexey Yerko - " + title;
+        document.title = title + " | Alexey Yerko";
         setTimeout(function(){
             busy = false;
         },2000);
