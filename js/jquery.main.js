@@ -121,6 +121,9 @@ function menuListener(){
         var address = $(this).attr('href');
         swapContent(address);
         history.pushState(null, null, address);
+        var getTitle = address.split('.',1).toString();
+        var title = getTitle.charAt(0).toUpperCase() + getTitle.substr(1);
+        document.title = "Alexey Yerko - " + title;
         setTimeout(function(){
             busy = false;
         },2000);
