@@ -67,13 +67,14 @@ input[type="radio"]:focus {
 a {
   color: $link-color;
   text-decoration: none;
-
+  outline: none;
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
+    outline: none;
   }
-
   &:focus {
     @include tab-focus;
   }

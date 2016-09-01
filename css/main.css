@@ -414,13 +414,19 @@
     transition: transform 0.3s; }
     #wrapper #main ul {
       padding: 0;
-      list-style-type: none; }
+      font-size: 1.25em; }
+    #wrapper #main h1 {
+      color: #006962;
+      margin-bottom: 30px; }
+    #wrapper #main h3 {
+      color: #777777;
+      margin-bottom: 20px; }
+    #wrapper #main p {
+      font-size: 1.25em; }
     #wrapper #main #about {
       padding: 50px 15px 0 15px; }
       #wrapper #main #about img {
         z-index: 100; }
-      #wrapper #main #about .row div:first-child {
-        margin-bottom: 60px; }
       #wrapper #main #about .navigation {
         display: inline-block;
         position: absolute;
@@ -525,12 +531,34 @@
             transition: fill 0.3s; }
         #wrapper #main #about .navigation .navigation--open .morph svg path {
           fill: #777; }
+      #wrapper #main #about .about {
+        margin: 0; }
+        #wrapper #main #about .about h1 {
+          margin: 0;
+          font-size: 3em; }
+        #wrapper #main #about .about h3 {
+          margin: 10px 0;
+          font-size: 1.5em; }
+      #wrapper #main #about .more {
+        display: none; }
+        #wrapper #main #about .more ul {
+          padding: 0 0 0 13px;
+          list-style-type: disc; }
+          #wrapper #main #about .more ul li {
+            margin-bottom: 5px; }
       #wrapper #main #about #skills {
         padding: 15px; }
         #wrapper #main #about #skills .skillsInner {
-          margin: 0;
-          padding-top: 50px;
-          padding-bottom: 50px; }
+          margin-bottom: 0; }
+        #wrapper #main #about #skills h2 {
+          margin-bottom: 25px; }
+        #wrapper #main #about #skills ul {
+          padding: 0 0 0 13px;
+          list-style-type: disc;
+          text-align: left; }
+        #wrapper #main #about #skills strong {
+          display: block;
+          margin: 0 0 8.5px; }
     #wrapper #main #contacts h1 {
       margin: 50px 0 25px 0;
       font-size: 3em;
@@ -626,6 +654,7 @@
       -ms-transform: translate3d(-50%, -50%, 0);
       transform: translate3d(-50%, -50%, 0); }
       #wrapper #main .main-title h1 {
+        margin-bottom: 8.5px;
         font-size: 4.2em;
         letter-spacing: 0.1em;
         text-transform: uppercase;
@@ -812,6 +841,8 @@
           stroke-width: 2; }
         #wrapper #main .examples .line-drawing path.stroke-thin {
           stroke-width: 1; }
+    #wrapper #main footer {
+      padding-bottom: 50px; }
 
 #modals {
   position: relative; }
@@ -864,9 +895,6 @@
       #modals #feedbackModal button:hover, #modals #feedbackModal button:focus {
         text-decoration: none; }
 
-.more {
-  display: none; }
-
 @media (max-width: 480px) {
   #wrapper .menu-button {
     margin: 5px; }
@@ -894,32 +922,28 @@
       height: 70px;
       left: calc(50% - 35px);
       margin: 10px 0; }
-  #wrapper #main #about .row div:first-child {
+  #wrapper #main #about .row > div:first-child {
     text-align: center; }
+  #wrapper #main #about .about {
+    padding-top: 50px; }
+    #wrapper #main #about .about h1, #wrapper #main #about .about h3 {
+      text-align: center; }
   #wrapper #main #about .navigation {
     right: calc(50% - 40px);
     top: 160px; }
     #wrapper #main #about .navigation.navigation--open .navigation__items li:first-child {
-      -webkit-transform: scale3d(1, 1, 1) translate3d(-110px, 100px, 0);
-      -ms-transform: scale3d(1, 1, 1) translate3d(-110px, 100px, 0);
-      transform: scale3d(1, 1, 1) translate3d(-110px, 100px, 0); }
-    #wrapper #main #about .navigation.navigation--open .navigation__items li:nth-child(2) {
       -webkit-transform: scale3d(1, 1, 1) translate3d(-50px, 100px, 0);
       -ms-transform: scale3d(1, 1, 1) translate3d(-50px, 100px, 0);
       transform: scale3d(1, 1, 1) translate3d(-50px, 100px, 0); }
-    #wrapper #main #about .navigation.navigation--open .navigation__items li:nth-child(3) {
+    #wrapper #main #about .navigation.navigation--open .navigation__items li:nth-child(2) {
       -webkit-transform: scale3d(1, 1, 1) translate3d(10px, 100px, 0);
       -ms-transform: scale3d(1, 1, 1) translate3d(10px, 100px, 0);
       transform: scale3d(1, 1, 1) translate3d(10px, 100px, 0); }
-    #wrapper #main #about .navigation.navigation--open .navigation__items li:nth-child(4) {
+    #wrapper #main #about .navigation.navigation--open .navigation__items li:nth-child(3) {
       -webkit-transform: scale3d(1, 1, 1) translate3d(70px, 100px, 0);
       -ms-transform: scale3d(1, 1, 1) translate3d(70px, 100px, 0);
       transform: scale3d(1, 1, 1) translate3d(70px, 100px, 0); }
-    #wrapper #main #about .navigation.navigation--open .navigation__items li:nth-child(5) {
-      -webkit-transform: scale3d(1, 1, 1) translate3d(130px, 100px, 0);
-      -ms-transform: scale3d(1, 1, 1) translate3d(130px, 100px, 0);
-      transform: scale3d(1, 1, 1) translate3d(130px, 100px, 0); }
-  #wrapper #main #about .expand {
+  #wrapper #main #about .p-btn {
     margin-left: calc(50% - 75px); }
   #wrapper #main #contacts h1 {
     font-size: 2em;
@@ -974,8 +998,12 @@
       height: 70px;
       left: calc(50% - 35px);
       margin: 25px 0; }
-  #wrapper #main #about .row div:first-child {
+  #wrapper #main #about .row > div:first-child {
     text-align: center; }
+  #wrapper #main #about .about {
+    padding-top: 50px; }
+    #wrapper #main #about .about h1, #wrapper #main #about .about h3 {
+      text-align: center; }
   #wrapper #main #about .navigation {
     right: calc(50% - 40px);
     top: 160px; }
@@ -999,7 +1027,7 @@
       -webkit-transform: scale3d(1, 1, 1) translate3d(160px, 0, 0);
       -ms-transform: scale3d(1, 1, 1) translate3d(160px, 0, 0);
       transform: scale3d(1, 1, 1) translate3d(160px, 0, 0); }
-  #wrapper #main #about .expand {
+  #wrapper #main #about .p-btn {
     margin-left: calc(50% - 75px); }
   #wrapper #main #contacts h1 {
     font-size: 2em; }
@@ -1026,11 +1054,15 @@
     border-left: 375px solid #eee; }
   #wrapper #main .works:after {
     border-right: 375px solid #eee; }
-  #wrapper #main #about .row div:first-child {
+  #wrapper #main #about .row > div:first-child {
     text-align: center; }
+  #wrapper #main #about .about {
+    padding-top: 25px; }
+    #wrapper #main #about .about h1, #wrapper #main #about .about h3 {
+      text-align: center; }
   #wrapper #main #about .navigation {
     right: calc(50% - 120px); }
-  #wrapper #main #about .expand {
+  #wrapper #main #about .p-btn {
     margin-left: calc(50% - 75px); }
   #wrapper #main #contacts h1 {
     font-size: 2em; }

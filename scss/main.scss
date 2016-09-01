@@ -189,19 +189,23 @@ $media-expressions: (
 		@include transition(transform 0.3s);
 		ul {
 			padding: 0;
-			list-style-type: none;
+			font-size: 1.25em;
+		}
+		h1{
+			color: #006962;
+			margin-bottom: 30px;
+		}
+		h3{
+			color: #777777;
+			margin-bottom: 20px;
+		}
+		p{
+			font-size: 1.25em;
 		}
 		#about {
 			padding: 50px 15px 0 15px;
 			img {
 				z-index: 100;
-			}
-			.row{
-				div{
-					&:first-child{
-						margin-bottom: 60px;
-					}
-				}
 			}
 			.navigation {
 				display: inline-block;
@@ -313,12 +317,43 @@ $media-expressions: (
 					}
 				}
 			}
+			.about{
+				margin: 0;
+				h1{
+					margin: 0;
+					font-size: 3em;
+				}
+				h3{
+					margin: 10px 0;
+					font-size: 1.5em;
+				}
+			}
+			.more{
+				display: none;
+				ul{
+					padding: 0 0 0 13px;
+					list-style-type: disc;
+					li{
+						margin-bottom: 5px;
+					}
+				}
+			}
 			#skills {
 				padding: 15px;
 				.skillsInner {
-					margin: 0;
-					padding-top: 50px;
-					padding-bottom: 50px;
+					margin-bottom: 0;
+				}
+				h2{
+					margin-bottom: 25px;
+				}
+				ul{
+					padding: 0 0 0 13px;
+					list-style-type: disc;
+					text-align: left;
+				}
+				strong{
+					display: block;
+					margin: 0 0 8.5px;
 				}
 			}
 		}
@@ -429,6 +464,7 @@ $media-expressions: (
 			text-align: center;
 			@include transform(translate3d(-50%, -50%, 0));
 			h1 {
+				margin-bottom: 8.5px;
 				font-size: 4.2em;
 				letter-spacing: 0.1em;
 				text-transform: uppercase;
@@ -658,6 +694,9 @@ $media-expressions: (
 				}
 			}
 		}
+		footer{
+			padding-bottom: 50px;
+		}
 	}
 }
 #modals{
@@ -721,9 +760,6 @@ $media-expressions: (
 		}
 	}
 }
-.more {
-	display: none;
-}
 
 // Media //
 @include media("<=phone") {
@@ -772,10 +808,16 @@ $media-expressions: (
 			}
 			#about{
 				.row{
-					div{
+					>div{
 						&:first-child{
 							text-align: center;
 						}
+					}
+				}
+				.about{
+					padding-top: 50px;
+					h1, h3{
+						text-align: center;
 					}
 				}
 				.navigation{
@@ -785,29 +827,19 @@ $media-expressions: (
 						.navigation__items{
 							li{
 								&:first-child {
-									@include transform(scale3d(1, 1, 1) translate3d(-110px, 100px, 0));
+									@include transform(scale3d(1, 1, 1) translate3d(-50px, 100px, 0));
 								}
 								&:nth-child(2) {
-									@include transform(scale3d(1, 1, 1) translate3d(-50px, 100px, 0));
-
+									@include transform(scale3d(1, 1, 1) translate3d(10px, 100px, 0));
 								}
 								&:nth-child(3) {
-									@include transform(scale3d(1, 1, 1) translate3d(10px, 100px, 0));
-
-								}
-								&:nth-child(4) {
 									@include transform(scale3d(1, 1, 1) translate3d(70px, 100px, 0));
-
-								}
-								&:nth-child(5) {
-									@include transform(scale3d(1, 1, 1) translate3d(130px, 100px, 0));
-
 								}
 							}
 						}
 					}
 				}
-				.expand{
+				.p-btn{
 					margin-left: calc(50% - 75px);
 				}
 			}
@@ -902,10 +934,16 @@ $media-expressions: (
 			}
 			#about{
 				.row{
-					div{
+					>div{
 						&:first-child{
 							text-align: center;
 						}
+					}
+				}
+				.about{
+					padding-top: 50px;
+					h1, h3{
+						text-align: center;
 					}
 				}
 				.navigation{
@@ -937,7 +975,7 @@ $media-expressions: (
 						}
 					}
 				}
-				.expand{
+				.p-btn{
 					margin-left: calc(50% - 75px);
 				}
 			}
@@ -993,16 +1031,22 @@ $media-expressions: (
 			}
 			#about{
 				.row{
-					div{
+					>div{
 						&:first-child{
 							text-align: center;
 						}
 					}
 				}
+				.about{
+					padding-top: 25px;
+					h1, h3{
+						text-align: center;
+					}
+				}
 				.navigation{
 					right: calc(50% - 120px);
 				}
-				.expand{
+				.p-btn{
 					margin-left: calc(50% - 75px);
 				}
 			}

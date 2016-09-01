@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="expires" content="Sun, 01 Jan 2017 07:01:00 GMT">
-	<title>home</title>
+	<title>Alexy Yerko - Home page</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
@@ -15,30 +15,30 @@
 		<header id="header">
 			<nav class="menu">
 				<div class="icon-list">
-					<a class="historyAPIMenu active" href="index.html"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
-					<a class="historyAPIMenu" href="portfolio.html"><i class="fa fa-fw fa-book"></i><span>Portfolio</span></a>
-					<a class="historyAPIMenu" href="about.html"><i class="fa fa-fw fa-question"></i><span>About</span></a>
-					<a class="historyAPIMenu" href="contacts.html"><i class="fa fa-fw fa fa-phone"></i><span>Contacts</span></a>
+					<a href="index.html" class="historyAPIMenu active" title="Home"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
+					<a href="portfolio.html" class="historyAPIMenu" title="Portfolio"><i class="fa fa-fw fa-book"></i><span>Portfolio</span></a>
+					<a href="about.html" class="historyAPIMenu" title="About"><i class="fa fa-fw fa-question"></i><span>About</span></a>
+					<a href="contacts.html" class="historyAPIMenu" title="Contacts"><i class="fa fa-fw fa fa-phone"></i><span>Contacts</span></a>
 				</div>
 			</nav>
-			<button class="close-button" id="close-button">Close Menu</button>
+			<button class="close-button" id="close-button" title="Close Menu">Close Menu</button>
 			<div class="morph-shape" id="morph-shape" data-morph-open="M-1,0h101c0,0,0-1,0,395c0,404,0,405,0,405H-1V0z">
 				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
 					<path d="M-1,0h101c0,0-97.833,153.603-97.833,396.167C2.167,627.579,100,800,100,800H-1V0z"/>
 				</svg>
 			</div>
 		</header>
-		<button class="menu-button" id="open-button">Open Menu</button>
+		<button class="menu-button" id="open-button" title="Open Menu">Open Menu</button>
 		<canvas id="dots-canvas"></canvas>
 		<main id="main">
 			<div class="main-title">
 				<h1 class="fade-in-bottom">Alexey <span class="thin">Yerko</span></h1>
-				<p class="fade-in delay-4">Front-end developer</p>
-				<a class="historyAPI p-btn fade-in-top delay-4" href="portfolio.html">portfolio</a>
+				<p class="fade-in delay-4">junior/trainee Front-end developer</p>
+				<a href="portfolio.html" class="historyAPI p-btn fade-in-top delay-4" title="Portfolio">portfolio</a>
 			</div>
 		</main>
 		<div id="modals">
-			<div id="feedbackModal" class="fade-in-bottom delay-2 col-lg-8 col-lg-offset-2">
+			<div id="feedbackModal" class="fade-in-bottom delay-2 col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 				<p>Thanks!</p>
 				<p>I'm will contact you as soon as possible.</p>
 				<button class="close fa fa-times" aria-hidden="true" form="feedback" type="reset">close</button>
