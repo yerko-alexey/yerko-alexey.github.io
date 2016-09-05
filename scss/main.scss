@@ -371,7 +371,8 @@ $media-expressions: (
 				letter-spacing: 0.1em;
 				color: #777777;
 			}
-			input{
+			input,
+			textarea{
 				width: 0;
 				display: block;
 				margin-bottom: 25px;
@@ -383,9 +384,10 @@ $media-expressions: (
 				}
 			}
 			input[type=text],
-			input[type=email]{
+			input[type=email],
+			textarea{
 				font-size: 1.5em;
-				line-height: 25px;
+				line-height: 28px;
 				letter-spacing: 0.1em;
 				background: transparent;
 				color: #777777;
@@ -394,6 +396,15 @@ $media-expressions: (
 				@include transition(border-bottom 1s ease-out);
 				&.error{
 					border-bottom-color: #ff0000;
+				}
+			}
+			textarea{
+				resize: none;
+				height: 29px;
+				@include transition(all 0.5s ease-out);
+				&:focus,
+				&:active{
+					height: 145px;
 				}
 			}
 			input[type=submit]{

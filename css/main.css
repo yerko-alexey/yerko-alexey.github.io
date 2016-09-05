@@ -570,7 +570,8 @@
       font-size: 1.5em;
       letter-spacing: 0.1em;
       color: #777777; }
-    #wrapper #main #contacts input {
+    #wrapper #main #contacts input,
+    #wrapper #main #contacts textarea {
       width: 0;
       display: block;
       margin-bottom: 25px;
@@ -578,9 +579,10 @@
     #wrapper #main #contacts input[type=text]:first-child {
       text-transform: capitalize; }
     #wrapper #main #contacts input[type=text],
-    #wrapper #main #contacts input[type=email] {
+    #wrapper #main #contacts input[type=email],
+    #wrapper #main #contacts textarea {
       font-size: 1.5em;
-      line-height: 25px;
+      line-height: 28px;
       letter-spacing: 0.1em;
       background: transparent;
       color: #777777;
@@ -589,8 +591,16 @@
       -webkit-transition: border-bottom 1s ease-out;
       transition: border-bottom 1s ease-out; }
       #wrapper #main #contacts input[type=text].error,
-      #wrapper #main #contacts input[type=email].error {
+      #wrapper #main #contacts input[type=email].error,
+      #wrapper #main #contacts textarea.error {
         border-bottom-color: #ff0000; }
+    #wrapper #main #contacts textarea {
+      resize: none;
+      height: 29px;
+      -webkit-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
+      #wrapper #main #contacts textarea:focus, #wrapper #main #contacts textarea:active {
+        height: 145px; }
     #wrapper #main #contacts input[type=submit] {
       width: 25%;
       margin: 0;
