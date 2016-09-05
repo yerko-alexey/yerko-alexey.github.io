@@ -30,6 +30,14 @@ function expand(){
             });
         });
     });
+    $('#ta_message').on('change', function(){
+        if ($.trim($(this).val())) {
+            $(this).height('145px');
+        }
+        else{
+            $(this).removeAttr('style');
+        }
+    });
 }
 
 //Feedback form//
