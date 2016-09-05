@@ -30,7 +30,7 @@ function expand(){
             });
         });
     });
-    $('#ta_message').on('change', function(){
+    $('body').on('change', '#ta_message', function(){
         if ($.trim($(this).val())) {
             $(this).height('145px');
         }
