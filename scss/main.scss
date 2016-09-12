@@ -328,6 +328,14 @@ $media-expressions: (
 					font-size: 1.5em;
 				}
 			}
+			.me{
+				width: 200px;
+				height: 200px;
+				padding: 3px;
+				background-color: #b0b0b0;
+				border-color: #b0b0b0;
+				@include box-shadow(0 0 15px 0 rgba(50, 50, 50, 1));
+			}
 			.more{
 				display: none;
 				ul{
